@@ -3,9 +3,112 @@
 <head>
 	<meta charset="utf-8"> 
 	<title>Search</title>
+	<script type='text/javascript' src='recipeObject.js'></script>
+	<script language="javascript">
+		cuisineOptions = new Array();
+
+		window.onload = function()
+		{
+			alert("in window.onload");
+
+			document.getElementById("refreshRecipesButton").onclick = function()
+			{
+				alert("here");
+				// document.getElementsByTagName("body")[0].load();
+				getRecipes();
+			}
+
+			// function reload()
+			// {
+			// 	alert("here");
+			// 	// document.getElementsByTagName("body")[0].load();
+			// 	getRecipes();
+			// }
+			
+		}
+
+		function getRecipes() {
+			// Make instance of request object
+			// to make HTTP request after page is loaded
+			request = new XMLHttpRequest();
+ 
+			// Set the URL for the AJAX request to be the JSON file
+			request.open("GET", "https://www.themealdb.com/api/json/v1/1/random.php");
+
+ 
+			// set up event handler/callback
+			request.onreadystatechange = function() {
+				// wait for done + success
+				if (request.readyState == 4 && request.status == 200) {
+
+					result = request.responseText;
+					recipe = JSON.parse(result);
+					//for now, API call only returns 1 recipe at a time
+					recipeJson = recipe["meals"][0];
+					recipeObject = createRecipeObject(recipeJson);
+
+					for (i = 0; i < recipeObject.cuisineTypes.length; i++)
+					{
+						cuisineOptions.push(recipeObject.cuisineTypes[i]);
+					}
+
+					recipeHtml = recipeToString(recipeObject);
+					document.getElementById("data").innerHTML = recipeHtml; 
+
+					// searchButton = document.getElementById("cuisineDropdownDiv").innerHTML;
+					document.getElementById("cuisineDropdownDiv").innerHTML = makeCuisineSelect() + "&nbsp" +makeFilterSearchButton();
+				}
+				else if (request.readyState == 4 && request.status != 200) {
+
+					document.getElementById("data").innerHTML = "Something went wrong! Please refresh the page";
+
+				}
+				else if (request.readyState == 3) {
+
+					document.getElementById("data").innerHTML = "Loading...";
+
+				}
+
+			}
+			//fire off the HTTP request
+			request.send();
+			console.log("4 - Request sent");
+
+			//change this so that the button says 'Get 10 more recipes,' which makes another API call, but
+			//adds onto the existing recipes and adds items to the cuisine dropdown list (if they do not 
+			//already exist in the list)
+			document.getElementById("refreshRecipesButton").onclick = function()
+			{
+				// alert("here");
+				// document.getElementsByTagName("body")[0].load();
+				cuisineOptions = [];
+				document.getElementById("cuisineDropdownDiv").innerHTML = "&nbsp";
+				getRecipes();
+			}
+		}
+
+		function makeCuisineSelect()
+		{
+			var s = "<select name='cuisineList' id='cuisine-list' size='1'>";
+			s += "<option>" + "No filter" + "</option>";
+			for (k=0; k < cuisineOptions.length; k++)
+			{
+				s += "<option>" + cuisineOptions[k] + "</option>";
+			}
+			s+= "</select>";
+			
+			return s;
+		}
+
+		function makeFilterSearchButton()
+		{
+			return "<input type='button' value='Search' />";
+		}
+
+	</script>
 </head>
 
-<body>
+<body onload="getRecipes()">
 	<nav style="display: flex; justify-content: space-between">
 		<div><a href="index.html">Home</a></div>
 		<div><a href="web_recipe.html">Search For Recipes</a></div>
@@ -14,19 +117,26 @@
 		<div><a href="shopping_list.html">My Shopping List</a></div>
 	</nav>
 
-	<h1>Search</h1>
+	<h1>
+		Browse Recipes
+		<input type="button" value="Get new recipes" id="refreshRecipesButton"/>
+	</h1>
+
 	<form method="POST" action="">
-		<select name="cuisine_type" size="1">
+		<div id="cuisineDropdownDiv">
+		&nbsp;
+		<!-- <select name="cuisine_type" size="1">
 			<option value="italian">Italian</option>
 			<option value="carribbean">Carribbean</option>
 			<option value="korean">Korean</option>
 			<option value="german">German</option>
 			<option value="indian">Indian</option>
-		</select>
-		<input type="button" value="Search" />
+		</select> -->
+		<!-- <input type="button" value="Search" /> -->
+		</div>
+		
 	</form>
-	<p style="color:red">look at API to decide which categories users can select from</p>
-	<p style="color:red">do API stuff display results below</p>
+
 	<div id="data">Loading...</div>
 	<p style="color:red">maybe try to put names of dishes into a dropdown list so users can decide which ones they want to add to favorites; or maybe we can have an "add to favorites" button next to each recipe, give each recipe an id and pass to database</p>
 
