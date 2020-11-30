@@ -7,26 +7,6 @@
 	<script language="javascript">
 		cuisineOptions = new Array();
 
-		window.onload = function()
-		{
-			alert("in window.onload");
-
-			document.getElementById("refreshRecipesButton").onclick = function()
-			{
-				alert("here");
-				// document.getElementsByTagName("body")[0].load();
-				getRecipes();
-			}
-
-			// function reload()
-			// {
-			// 	alert("here");
-			// 	// document.getElementsByTagName("body")[0].load();
-			// 	getRecipes();
-			// }
-			
-		}
-
 		function getRecipes() {
 			// Make instance of request object
 			// to make HTTP request after page is loaded
