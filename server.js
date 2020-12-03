@@ -21,6 +21,18 @@ app.get('/', function(req, res) {
     res.render('index');
 });
 
+// set other routes
+app.get('/', function(req, res) {
+    res.render('index');
+});
+
+app.get('/favorites', function(req, res) {
+    res.render('favorites.html');
+});
+
+
+
+
 app.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);
 });
