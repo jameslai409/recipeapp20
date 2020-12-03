@@ -1,3 +1,6 @@
+const MongoClient = require('mongodb').MongoClient;
+const url = "mongodb+srv://recipeappuser:<password>@recipeappcluster.vvovx.mongodb.net";
+
 var express = require('express');
 var app = express();
 
@@ -21,3 +24,12 @@ app.get('/', function(req, res) {
 app.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);
 });
+
+/*
+    var dbo = db.db("textbooks");
+    var collection = dbo.collection("bks");
+
+    console.log("Success!");
+    db.close();
+
+*/
