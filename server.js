@@ -27,7 +27,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/favorites', function(req, res) {
-    res.render('favorites.html');
+    res.render('favorites');
 });
 
 
