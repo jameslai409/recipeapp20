@@ -22,13 +22,22 @@ app.get('/', function(req, res) {
 });
 
 // set other routes
-app.get('/', function(req, res) {
-    res.render('index');
-});
-
 app.get('/favorites', function(req, res) {
     res.render('favorites');
 });
+
+app.get('/shoppinglist', function(req, res) {
+    res.render('shopping_list');
+});
+
+app.get('/webrecipe', function(req, res) {
+    res.render('web_recipe');
+});
+
+app.get('/createrecipe', function(req, res) {
+    res.render('create_recipe');
+});
+
 
 
 
