@@ -1,6 +1,6 @@
 # recipeapp20
 
-##Folder structure
+## Folder structure
 -All pages are found in the 'views' folder
 -All external CSS stylesheets are put in the 'public/css' folder
 -All external Javascript files are put in the 'public/js' folder
@@ -21,7 +21,7 @@ To include external .js files in one of the pages do the following:
   so the bottom of the page should look like
   
   //html stuff here \
-  `<% include partials/recipeObjectFooter %> 
-  </body> 
-  </html>`
+  `<% include partials/recipeObjectFooter %>`
+  `</body>`
+  `</html>`
   
