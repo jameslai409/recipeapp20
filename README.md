@@ -21,12 +21,12 @@ To include external .js files in one of the pages do the following:
     - (note that you must include js in the path before the file name)
 6. Now go to the 'views' folder and find the page you want to include externalJavascript.js in
 7. Scroll to the bottom of the page, and insert the following right before the **closing** </body> tag: \
-  `<% include partials/recipeObjectFooter %>`
+  `<% include partials/externalJavascriptFooter %>`
   
   so the bottom of the page should look like
   
     //html stuff here 
-     <% include partials/recipeObjectFooter %>
+     <% include partials/externalJavascriptFooter %>
      </body>
      </html>
   
