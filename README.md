@@ -1,4 +1,9 @@
 # recipeapp20
+## Contributors
+- Di Wu
+- Erica DeBarge
+- James Lai
+- Andy Hernandez 
 
 ## Folder structure
 - All pages are found in the 'views' folder
