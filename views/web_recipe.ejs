@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8"> 
 	<title>Search</title>
-	//<script type='text/javascript' src='../recipeObject.js'></script>
+	<script type='text/javascript' src='../recipeObject.js'></script>
 	<script language="javascript">
 		cuisineOptions = new Array();
 
@@ -11,6 +11,7 @@
 			// Make instance of request object to make HTTP request 
 			//after page is loaded
 			request = new XMLHttpRequest();
+			alert("in get recipes, about to make request);
  
 			// Set the URL for the AJAX request to be the JSON file
 			request.open("GET", "https://www.themealdb.com/api/json/v1/1/random.php");
@@ -20,12 +21,13 @@
 			request.onreadystatechange = function() {
 				// wait for done + success
 				if (request.readyState == 4 && request.status == 200) {
-
+					alert("now processing response");
 					result = request.responseText;
 					recipe = JSON.parse(result);
 					//for now, API call only returns 1 recipe at a time
 					recipeJson = recipe["meals"][0];
 					recipeObject = createRecipeObject(recipeJson);
+					alert("after createRecipeObject");
 
 					for (i = 0; i < recipeObject.cuisineTypes.length; i++)
 					{
@@ -33,6 +35,7 @@
 					}
 
 					recipeHtml = recipeToString(recipeObject);
+					alert("after recipeToString");
 					document.getElementById("data").innerHTML = recipeHtml; 
 
 					// searchButton = document.getElementById("cuisineDropdownDiv").innerHTML;
@@ -88,8 +91,7 @@
 	</script>
 </head>
 
-<!-- <body onload="getRecipes()"> -->
-<body>
+<body onload="getRecipes()">
 	<nav style="display: flex; justify-content: space-between">
 		<div><a href="/">Home</a></div>
 		<div><a href="/webrecipe">Search For Recipes</a></div>
