@@ -2,6 +2,7 @@
 
 All pages are found in 'views' folder
 
+## How to add an external javascript file to an .ejs page
 To include external .js files in one of the pages do the following:
 1. Say the file you want to include in a page is called externalJavascript.js
 2. Put externalJavascript.js in the 'public/js' folder
@@ -11,13 +12,13 @@ To include external .js files in one of the pages do the following:
   - <script language="text/javascript" src="js/externalJavascript.js"></script> 
     - (note that you must include js in the path before the file name)
 6. Now go to the 'views' folder and find the page you want to include externalJavascript.js in
-7. Scroll to the bottom of the page, and insert the following right before the **closing** </body> tag:
+7. Scroll to the bottom of the page, and insert the following right before the **closing** </body> tag: \
   <% include partials/recipeObjectFooter %>
   
   so the bottom of the page should look like
   
-  //html stuff here
-  <% include partials/recipeObjectFooter %>
-  </body>
+  //html stuff here \
+  <% include partials/recipeObjectFooter %> \
+  </body> \
   </html>
   
