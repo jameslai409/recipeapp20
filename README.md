@@ -20,8 +20,8 @@ To include external .js files in one of the pages do the following:
   
   so the bottom of the page should look like
   
-  //html stuff here \
-  `<% include partials/recipeObjectFooter %>` \
-  `</body>` \
-  `</html>`
+    //html stuff here \
+    `<% include partials/recipeObjectFooter %>` \
+    `</body>` \
+    `</html>`
   
