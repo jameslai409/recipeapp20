@@ -30,12 +30,8 @@ app.get('/shoppinglist', function(req, res) {
     res.render('shopping_list');
 });
 
-var myScripts = require('./recipeObject.js');
-
 app.get('/webrecipe', function(req, res) {
-    res.render('web_recipe', {
-    utils: myScripts
-    });
+    res.render('web_recipe');
 });
 
 app.get('/createrecipe', function(req, res) {
