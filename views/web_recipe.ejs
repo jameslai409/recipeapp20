@@ -35,6 +35,7 @@
 
 					recipeHtml = recipeToString(recipeObject);
 					document.getElementById("data").innerHTML = recipeHtml; 
+					document.getElementById("form_holder").innerHTML = "<form class="form1" method="POST" action=""><input type="button" value="Add to Favorites" id="addToFavorites"><input type="button" value="NEXT RECIPE" id="refreshRecipesButton"/></form>"; 
 
 					// searchButton = document.getElementById("cuisineDropdownDiv").innerHTML;
 					// document.getElementById("cuisineDropdownDiv").innerHTML = makeCuisineSelect() + "&nbsp" +makeFilterSearchButton();
@@ -87,6 +88,7 @@
 		}
 
 	</script>
+
 </head>
 
 <body onload="getRecipes()">
@@ -117,9 +119,6 @@
 		<input type="button" value="NEXT RECIPE" id="refreshRecipesButton"/>
 	</form> -->
 	<div id="data">Loading...</div>
-	<script language="javascript">
-		document.getElementById("form_holder").innerHTML = "<form class="form1" method="POST" action=""><input type="button" value="Add to Favorites" id="addToFavorites"><input type="button" value="NEXT RECIPE" id="refreshRecipesButton"/></form>"; 
-	</script>
 
 <% include partials/recipeObjectFooter %>
 </body>
