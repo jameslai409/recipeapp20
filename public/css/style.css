@@ -59,7 +59,7 @@ a.middle:hover:before {
 
 .body-container {
 	margin-left: 5%;
-	display: none;
+	display: block;
 }
 
 .flex-container {
