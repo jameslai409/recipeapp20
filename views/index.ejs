@@ -8,18 +8,46 @@
     <!-- load bootstrap and our own personal stylesheet -->
     <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/superhero/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../public/css/style.css" type="text/css">
+    <style type="text/css">
+		h1 {
+			font-weight: 400;
+			font-size: 72px;
+			text-align: center;
+			width: 43%;
+			margin-top: 30px;
+		}
+		img {
+			width: 102px;
+			height: 102px;
+			margin-top: 19%;
+			text-align: center;
+		}
+		p {
+			font-weight: 400;
+			font-size: 18px;
+			width: 29%;
+			text-align: center;
+			margin-top: 10px;
+		}
+		#start {
+			color: #4AEF21;
+			width: 192px;
+			height: 64px;
+			text-align: center;
+			margin-top: 100px;
+			border-radius: 12px;
+			font-color: #E9FFE3;
+			font-size: 20px;
+		}
+	</style>
 </head>
 <body>
-	<nav style="display: flex; justify-content: space-between">
-		<div><a href="/">Home</a></div>
-		<div><a href="/webrecipe">Search For Recipes</a></div>
-		<div><a href="/createrecipe">Create Your Own Recipe</a></div>
-		<div><a href="/favorites">My Favorites</a></div>
-		<div><a href="/shoppinglist">My Shopping List</a></div>
-	</nav>
-
-	<h1>Home</h1>
-	<p style="color:red">Describe how the website works...</p>
+	<img src="../public/images/logo.png">
+	<h1>Pick Your Recipes for the Week</h1>
+	<p>Select the recipes you want to cook this week, and we'll take care of your shopping list for you.</p>
+	<form action="/webrecipe">
+		<input type="submit" value="GET STARTED" id="start">
+	</form>
 </body>
 
 </html>
