@@ -42,8 +42,6 @@ a.middle:hover:before {
   transform: scaleX(1);
 }
 
-.recipeDishTypes {display: none;}
-.recipeCuisineTypes {display: none;}
 .recipeDisplayContainer {
 	margin: 5% 10% 10% 0%;
 	background-color: #f2ffef;

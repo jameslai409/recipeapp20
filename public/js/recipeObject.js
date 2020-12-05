@@ -58,18 +58,18 @@ function recipeToString(recipe)
 {
 	html = "<div class='recipeDisplayContainer'>";
 	nameString = "<h1 class='recipeName'>" + recipe.name + "</h1>";
-	dishTypeString = recipe.dishTypes.length == 0 ? "" :
-					"<div class='recipeDishTypes'>Dish type(s): " + arrayToString(recipe.dishTypes) + "</div>";
-	cuisineTypeString = recipe.cuisineTypes.length == 0 ? "" :
-					"<div class='recipeCuisineTypes'>Cuisine type(s): " + arrayToString(recipe.cuisineTypes) + "</dic>";
+	// dishTypeString = recipe.dishTypes.length == 0 ? "" :
+	// 				"<div class='recipeDishTypes'>Dish type(s): " + arrayToString(recipe.dishTypes) + "</div>";
+	// cuisineTypeString = recipe.cuisineTypes.length == 0 ? "" :
+	// 				"<div class='recipeCuisineTypes'>Cuisine type(s): " + arrayToString(recipe.cuisineTypes) + "</dic>";
 	html2 = "<div class='flex-container'>";
-	imageString = "&nbsp <img class='recipeImg' src='" + recipe.image + "'/>";
+	imageString = "<img class='recipeImg' src='" + recipe.image + "'/>";
 	html3 = "<div class='body-container>";
 	instructionsString = "<div class='instructions'>" + recipe.instructions + "</div>";
 	ingredientsString = "<div class='ingredients'>" + arrayToUnorderedList(recipe.ingredients) + "</div>";
 
 	// favoriteHiddenDiv = "<input type='text' name='favorite' id='favoriteId' style='display:none' />";
-	html += nameString + dishTypeString + cuisineTypeString + html2 + imageString + instructionsString + ingredientsString;
+	html += nameString + html2 + imageString + instructionsString + ingredientsString;
 	html += "</div></div>";
 	html += "</div>";
 

@@ -36,8 +36,8 @@
 					recipeHtml = recipeToString(recipeObject);
 					document.getElementById("data").innerHTML = recipeHtml; 
 
-					searchButton = document.getElementById("cuisineDropdownDiv").innerHTML;
-					document.getElementById("cuisineDropdownDiv").innerHTML = makeCuisineSelect() + "&nbsp" +makeFilterSearchButton();
+					// searchButton = document.getElementById("cuisineDropdownDiv").innerHTML;
+					// document.getElementById("cuisineDropdownDiv").innerHTML = makeCuisineSelect() + "&nbsp" +makeFilterSearchButton();
 				}
 				else if (request.readyState == 4 && request.status != 200) {
 
@@ -58,14 +58,14 @@
 			//change this so that the button says 'Get 10 more recipes,' which makes another API call, but
 			//adds onto the existing recipes and adds items to the cuisine dropdown list (if they do not 
 			//already exist in the list)
-			document.getElementById("refreshRecipesButton").onclick = function()
-			{
-				// alert("here");
-				// document.getElementsByTagName("body")[0].load();
-				cuisineOptions = [];
-				document.getElementById("cuisineDropdownDiv").innerHTML = "&nbsp";
-				getRecipes();
-			}
+			// document.getElementById("refreshRecipesButton").onclick = function()
+			// {
+			// 	// alert("here");
+			// 	// document.getElementsByTagName("body")[0].load();
+			// 	cuisineOptions = [];
+			// 	document.getElementById("cuisineDropdownDiv").innerHTML = "&nbsp";
+			// 	getRecipes();
+			// }
 		}
 
 		function makeCuisineSelect()
