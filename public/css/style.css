@@ -57,9 +57,15 @@ a.middle:hover:before {
 }
 
 #recipeImg {
-	width: 20%;
+	width: 288px;
 }
 
+#instructions {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+#
 
 
 .container .jumbotron    { border-radius:40px; }
