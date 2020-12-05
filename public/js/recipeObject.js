@@ -70,7 +70,7 @@ function recipeToString(recipe)
 
 	// favoriteHiddenDiv = "<input type='text' name='favorite' id='favoriteId' style='display:none' />";
 	html += nameString + html2 + imageString + html3 + instructionsString + ingredientsString;
-	html += "</div></div></div>";
+	html += "</div></div>";
 	return html;
 }
 
