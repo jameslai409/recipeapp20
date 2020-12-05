@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node Sample App</title>
+
+    <!-- CSS -->
+    <!-- load bootstrap and our own personal stylesheet -->
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/superhero/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <style type="text/css">
+		h1 {
+			font-weight: 400;
+			font-size: 72px;
+			text-align: center;
+			margin-top: 30px;
+			margin-left: 20%;
+			margin-right: 20%;
+			color: #020202;
+		}
+		img {
+			width: 102px;
+			height: 102px;
+			margin-top: 15%;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+		p {
+			font-weight: 400;
+			font-size: 22px;
+			text-align: center;
+			margin-top: 10px;
+			margin-left: 28%;
+			margin-right: 28%;
+			color: #020202;
+		}
+		#start {
+			background-color: #4aef21;
+			border: none;
+			width: 192px;
+			height: 64px;
+			margin-top: 5%;
+			border-radius: 12px;
+			color: #e9ffe3;
+			font-size: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<img src="/img/logo.png">
+	<h1>Pick Your Recipes for the Week</h1>
+	<p>Select the recipes you want to cook this week, and we'll take care of your shopping list for you.</p>
+	<form action="/webrecipe">
+		<input type="submit" value="GET STARTED" id="start">
+	</form>
+</body>
+
+</html>
