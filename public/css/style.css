@@ -45,6 +45,7 @@ a.middle:hover:before {
 .recipeDisplayContainer {
 	margin-left: 10%;
 	margin-right: 10%;
+	margin-top: 5%;
 	height: 60%;
 	background-color: #f2ffef;
 }
@@ -58,7 +59,7 @@ a.middle:hover:before {
 }
 
 .body-container {
-	margin-left: 5%;
+	margin-left: 2%;
 	display: block;
 }
 
