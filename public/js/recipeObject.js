@@ -58,17 +58,20 @@ function recipeToString(recipe)
 {
 	html = "<div class='recipeDisplayContainer'>";
 	nameString = "<h1 class='recipeName'>" + recipe.name + "</h1>";
-	imageString = "&nbsp <img style='width: 150px' src='" + recipe.image + "'/>";
 	dishTypeString = recipe.dishTypes.length == 0 ? "" :
 					"<h3 class='recipeDishTypes'>Dish type(s): " + arrayToString(recipe.dishTypes) + "</h3>";
 	cuisineTypeString = recipe.cuisineTypes.length == 0 ? "" :
 					"<h3 class='recipeCuisineTypes'>Cuisine type(s): " + arrayToString(recipe.cuisineTypes) + "</h3>";
+	html2 = "<div class='flex-container'>";
+	imageString = "&nbsp <img class='recipeImg' src='" + recipe.image + "'/>";
+	html3 = "<div class='body-container>";
 	instructionsString = "<p class='instructions'> <h3> Instructions </h3>" + recipe.instructions + "</p>";
 	ingredientsString = "<h3> Ingredients </h3>" + arrayToUnorderedList(recipe.ingredients);
 
 	// favoriteHiddenDiv = "<input type='text' name='favorite' id='favoriteId' style='display:none' />";
-	html += nameString + dishTypeString + cuisineTypeString +  imageString + ingredientsString + instructionsString;
-	html += "</div>"
+	html += nameString + dishTypeString + cuisineTypeString + html2 + imageString + instructionsString + ingredientsString;
+	html += "</div></div>";
+	html += "</div>";
 
 	return html;
 }
