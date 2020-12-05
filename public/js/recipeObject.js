@@ -66,10 +66,11 @@ function recipeToString(recipe)
 	imageString = "<img class='recipeImg' src='" + recipe.image + "'/>";
 	html3 = "<div class='body-container'>";
 	instructionsString = "<div class='instructions'>" + recipe.instructions + "</div>";
+	html4 = "<div class='flex-container2'>";
 	ingredientsString = "<div class='ingredients'>" + arrayToUnorderedList(recipe.ingredients) + "</div>";
 
 	// favoriteHiddenDiv = "<input type='text' name='favorite' id='favoriteId' style='display:none' />";
-	html += nameString + html2 + imageString + html3 + instructionsString + ingredientsString;
+	html += nameString + html2 + imageString + html3 + instructionsString + html4 + ingredientsString;
 	return html;
 }
 
