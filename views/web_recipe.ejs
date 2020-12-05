@@ -111,10 +111,11 @@
 		</div>
 		
 	</form> -->
-	<script language="javascript">
-		content = document.getElementById("data").innerHTML;
-		document.getElementById("data").innerHTML = content + "<form class="form1" method=POST" action=""><input type="button" value="Add to Favorites" id="addToFavorites"><br/><br/><input type="button" value="NEXT RECIPE" id="refreshRecipesButton"/></form></div></div>";
-	</script>
+
+	<form class="form1" method="POST" action="">
+		<input type="button" value="Add to Favorites" id="addToFavorites">
+		<input type="button" value="NEXT RECIPE" id="refreshRecipesButton"/>
+	</form>
 	<div id="data">Loading...</div>
 
 <% include partials/recipeObjectFooter %>

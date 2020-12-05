@@ -98,8 +98,11 @@ a.middle:hover:before {
 }
 
 .form1 {
-	margin-right: 5%;
-	margin-top: 10%;
+	/*margin-right: 5%;
+	margin-top: 10%;*/
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #addToFavorites {
