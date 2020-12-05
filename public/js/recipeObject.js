@@ -71,9 +71,6 @@ function recipeToString(recipe)
 
 	// favoriteHiddenDiv = "<input type='text' name='favorite' id='favoriteId' style='display:none' />";
 	html += nameString + html2 + imageString + html3 + instructionsString + html4 + ingredientsString;
-	html += "<form class="form1" method="POST" action="">";
-	html += "<input type="button" value="Add to Favorites" id="addToFavorites"><br/><br/>";
-	html += "<input type="button" value="NEXT RECIPE" id="refreshRecipesButton"/></form>";
 	html += "</div></div></div></div>";
 
 	return html;
