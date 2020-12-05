@@ -96,7 +96,7 @@ function arrayToUnorderedList(array)
 	if (array.length <= 9) {
 		for (i = 0; i < array.length; i++)
 			result += "<li>" + array[i] + "</li>";
-		result += "</ul></div>";
+		result += "</ul>";
 	}
 	else {
 		for (i = 0; i < 9; i++)
@@ -105,7 +105,7 @@ function arrayToUnorderedList(array)
 		result += "<div class='list2><ul>"
 		for (i = 9; i < array.length; i++)
 			result += "<li>" + array[i] + "</li>";
-		result += "</ul></div>";
+		result += "</ul>";
 	}
 
 	return result;
