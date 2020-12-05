@@ -74,7 +74,7 @@ function recipeToString(recipe)
 	html += "<form class="form1" method="POST" action="">";
 	html += "<input type="button" value="Add to Favorites" id="addToFavorites"><br/><br/>";
 	html += "<input type="button" value="NEXT RECIPE" id="refreshRecipesButton"/></form>";
-	html += "</div></div></div>";
+	html += "</div></div></div></div>";
 
 	return html;
 }
