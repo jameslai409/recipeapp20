@@ -70,7 +70,6 @@ function recipeToString(recipe)
 
 	// favoriteHiddenDiv = "<input type='text' name='favorite' id='favoriteId' style='display:none' />";
 	html += nameString + html2 + imageString + html3 + instructionsString + ingredientsString;
-	html += "</div></div>";
 	return html;
 }
 
@@ -101,11 +100,11 @@ function arrayToUnorderedList(array)
 	else {
 		for (i = 0; i < 9; i++)
 			result += "<li>" + array[i] + "</li>";
-		result += "</ul></div>";
+		result += "</ul>";
 		result += "<div class='list2><ul>"
 		for (i = 9; i < array.length; i++)
 			result += "<li>" + array[i] + "</li>";
-		result += "</ul></div>";
+		result += "</ul>";
 	}
 
 	return result;
