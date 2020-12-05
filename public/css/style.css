@@ -57,7 +57,7 @@ a.middle:hover:before {
 	font-weight: 400;
 }
 
-/*.body-container {
+.body-container {
 	margin-left: 5%;
 	display: none;
 }
@@ -65,7 +65,7 @@ a.middle:hover:before {
 .flex-container {
 	display: flex;
 }
-*/
+
 /*.flex-container2 {
 	display: flex;
 	justify-content: space-between;
@@ -82,19 +82,19 @@ a.middle:hover:before {
 	padding-bottom: 1.5%;
 }
 
-/*.instructions {
+.instructions {
 	font-size: 16px;
 	font-weight: 500;
 	width: 90%;
 	padding-left: 5%;
 	padding-right: 5%;
-}*/
+}
 
-/*.ingredients {
+.ingredients {
 	font-size: 14px;
 	font-weight: 700;
 	display: flex;
-}*/
+}
 
 .form1 {
 	margin-right: 5%;
