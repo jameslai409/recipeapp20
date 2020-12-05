@@ -64,7 +64,7 @@ function recipeToString(recipe)
 	// 				"<div class='recipeCuisineTypes'>Cuisine type(s): " + arrayToString(recipe.cuisineTypes) + "</dic>";
 	html2 = "<div class='flex-container'>";
 	imageString = "<img class='recipeImg' src='" + recipe.image + "'/>";
-	html3 = "<div class='body-container>";
+	html3 = "<div class='body-container'>";
 	instructionsString = "<div class='instructions'>" + recipe.instructions + "</div>";
 	html4 = "<div class='flex-container2'>";
 	ingredientsString = "<div class='ingredients'>" + arrayToUnorderedList(recipe.ingredients) + "</div>";
