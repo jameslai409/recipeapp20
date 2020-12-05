@@ -65,13 +65,13 @@ a.middle:hover:before {
 	display: flex;
 }
 
-.flex-container2 {
+/*.flex-container2 {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 3%;
 	margin-left: 4%;
 	margin-right: 4%;
-}
+}*/
 
 .recipeImg {
 	padding-left: 5%;
@@ -92,6 +92,7 @@ a.middle:hover:before {
 .ingredients {
 	font-size: 14px;
 	font-weight: 700;
+	display: flex;
 }
 
 .form1 {

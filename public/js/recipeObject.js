@@ -66,11 +66,11 @@ function recipeToString(recipe)
 	imageString = "<img class='recipeImg' src='" + recipe.image + "'/>";
 	html3 = "<div class='body-container'>";
 	instructionsString = "<div class='instructions'>" + recipe.instructions + "</div>";
-	html4 = "<div class='flex-container2'>";
 	ingredientsString = "<div class='ingredients'>" + arrayToUnorderedList(recipe.ingredients) + "</div>";
 
 	// favoriteHiddenDiv = "<input type='text' name='favorite' id='favoriteId' style='display:none' />";
-	html += nameString + html2 + imageString + html3 + instructionsString + html4 + ingredientsString;
+	html += nameString + html2 + imageString + html3 + instructionsString + ingredientsString;
+	html += "</div></div></div>";
 	return html;
 }
 
@@ -96,7 +96,7 @@ function arrayToUnorderedList(array)
 	if (array.length <= 9) {
 		for (i = 0; i < array.length; i++)
 			result += "<li>" + array[i] + "</li>";
-		result += "</ul>";
+		result += "</ul></div>";
 	}
 	else {
 		for (i = 0; i < 9; i++)
@@ -105,7 +105,7 @@ function arrayToUnorderedList(array)
 		result += "<div class='list2><ul>"
 		for (i = 9; i < array.length; i++)
 			result += "<li>" + array[i] + "</li>";
-		result += "</ul>";
+		result += "</ul></div>";
 	}
 
 	return result;
