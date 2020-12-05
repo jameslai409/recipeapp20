@@ -11,6 +11,7 @@ nav {
 	margin-right: 15%;
 	display: flex;
 	justify-content: space-between;
+	font-family: Righteous;
 }
 
 a {
@@ -41,32 +42,30 @@ a.middle:hover:before {
   transform: scaleX(1);
 }
 
-#recipeDishTypes {display: none;}
-#recipeCuisineTypes {display: none;}
-#recipeDisplayContainer {
+.recipeDishTypes {display: none;}
+.recipeCuisineTypes {display: none;}
+.recipeDisplayContainer {
 	margin: 5% 10% 10% 0%;
 	background-color: #f2ffef;
 }
-#recipeName {
+.recipeName {
 	font: Righteous;
 	font-size: 40px;
 	font-weight: 400;
 }
-#flex-container {
+.flex-container {
 	display: flex;
 }
 
-#recipeImg {
+.recipeImg {
 	width: 288px;
 }
 
-#instructions {
+.instructions {
 	font-size: 16px;
 	font-weight: 500;
+	width: 646px;
 }
-
-#
-
 
 .container .jumbotron    { border-radius:40px; }
 
