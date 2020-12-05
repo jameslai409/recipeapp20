@@ -58,8 +58,6 @@ a.middle:hover:before {
 }
 
 .body-container {
-	display: flex;
-	flex-direction: column;
 }
 
 .recipeImg {
