@@ -43,38 +43,83 @@ a.middle:hover:before {
 }
 
 .recipeDisplayContainer {
-	margin: 5% 10% 10% 0%;
+	margin-left: 10%;
+	margin-right: 10%;
+	height: 60%;
 	background-color: #f2ffef;
 }
 .recipeName {
+	padding-left: 5%;
+	padding-top: 2%;
 	font-family: Righteous;
 	font-size: 40px;
 	font-weight: 400;
 }
+
+.body-container {
+	margin-left: 5%;
+	display: none;
+}
+
 .flex-container {
 	display: flex;
 }
 
-.body-container {
-	margin-left: 5%;
-	display: block;
+.flex-container2 {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 3%;
+	margin-left: 4%;
+	margin-right: 4%;
 }
 
 .recipeImg {
+	padding-left: 5%;
 	width: 288px;
+	height: 476px;
+	text-align: center;
+	padding-bottom: 1.5%;
 }
 
 .instructions {
 	font-size: 16px;
 	font-weight: 500;
-	width: 646px;
+	width: 90%;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
 .ingredients {
 	font-size: 14px;
 	font-weight: 700;
+	display: flex;
+}
+
+.form1 {
+	margin-right: 5%;
+	margin-top: 10%;
+
+}
+
+#addToFavorites {
+	background-color: #4aef21;
+	border: none;
+	border-radius: 12px;
+	width: 250px;
+	height: 64px;
+	color: #e9ffe3;
+	font-size: 20px;
+	font-weight: 800;
+}
+
+#refreshRecipesButton {
+	background-color: #f2ffef;
+	border: none;
+	color: #4aef21;
+	font-size: 20px;
+	font-weight: 800;
+	width: 250px;
+	height: 64px;
 }
 
 .container .jumbotron    { border-radius:40px; }
-
-

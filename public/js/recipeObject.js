@@ -66,10 +66,11 @@ function recipeToString(recipe)
 	imageString = "<img class='recipeImg' src='" + recipe.image + "'/>";
 	html3 = "<div class='body-container>";
 	instructionsString = "<div class='instructions'>" + recipe.instructions + "</div>";
+	html4 = "<div class='flex-container2'>";
 	ingredientsString = "<div class='ingredients'>" + arrayToUnorderedList(recipe.ingredients) + "</div>";
 
 	// favoriteHiddenDiv = "<input type='text' name='favorite' id='favoriteId' style='display:none' />";
-	html += nameString + html2 + imageString + instructionsString + ingredientsString;
+	html += nameString + html2 + imageString + html3 + instructionsString + html4 + ingredientsString;
 	html += "</div></div>";
 	html += "</div>";
 
@@ -93,14 +94,22 @@ function arrayToString(array)
 
 function arrayToUnorderedList(array)
 {
-	result = "<ul>";
+	result = "<div class='list1'><ul>";
 
-	for (i = 0; i < array.length; i++)
-	{
-		result += "<li>" + array[i] + "</li>";
+	if (array.length <= 9) {
+		for (i = 0; i < array.length; i++)
+			result += "<li>" + array[i] + "</li>";
+		result += "</ul></div>";
 	}
-
-	result += "</ul>";
+	else {
+		for (i = 0; i < 9; i++)
+			result += "<li>" + array[i] + "</li>";
+		result += "</ul></div>";
+		result += "<div class='list2><ul>"
+		for (i = 9; i < array.length; i++)
+			result += "<li>" + array[i] + "</li>";
+		result += "</ul></div>"
+	}
 
 	return result;
 }
