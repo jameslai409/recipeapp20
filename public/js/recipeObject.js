@@ -107,7 +107,7 @@ function arrayToUnorderedList(array)
 		result += "<div class='list2><ul>"
 		for (i = 9; i < array.length; i++)
 			result += "<li>" + array[i] + "</li>";
-		result += "</ul></div>"
+		result += "</ul></div>";
 	}
 
 	return result;
