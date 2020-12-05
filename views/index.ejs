@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Node Sample App</title>
+    <title>Pick Your Recipes</title>
 
     <!-- CSS -->
     <!-- load bootstrap and our own personal stylesheet -->
@@ -14,19 +14,26 @@
 			font-size: 72px;
 			text-align: center;
 			margin-top: 30px;
+			margin-left: 20%;
+			margin-right: 20%;
 			color: #020202;
 		}
 		img {
 			width: 102px;
 			height: 102px;
-			margin-top: 19%;
+			margin-top: 15%;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
 			text-align: center;
 		}
 		p {
 			font-weight: 400;
-			font-size: 18px;
+			font-size: 22px;
 			text-align: center;
 			margin-top: 10px;
+			margin-left: 28%;
+			margin-right: 28%;
 			color: #020202;
 		}
 		#start {
@@ -34,16 +41,18 @@
 			border: none;
 			width: 192px;
 			height: 64px;
-			text-align: center;
-			margin-top: 100px;
+			margin-top: 5%;
 			border-radius: 12px;
 			color: #e9ffe3;
 			font-size: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
 		}
 	</style>
 </head>
 <body>
-	<img src="../public/imag/logo.png">
+	<img src="../public/img/logo.png">
 	<h1>Pick Your Recipes for the Week</h1>
 	<p>Select the recipes you want to cook this week, and we'll take care of your shopping list for you.</p>
 	<form action="/webrecipe">
