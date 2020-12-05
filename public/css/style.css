@@ -47,7 +47,7 @@ a.middle:hover:before {
 	background-color: #f2ffef;
 }
 .recipeName {
-	font: Righteous;
+	font-family: Righteous;
 	font-size: 40px;
 	font-weight: 400;
 }
@@ -56,6 +56,9 @@ a.middle:hover:before {
 }
 
 .body-container {
+	margin-left: 5%;
+	display: flex;
+	flex-direction: column;
 }
 
 .recipeImg {

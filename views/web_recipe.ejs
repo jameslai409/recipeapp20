@@ -28,10 +28,10 @@
 					recipeJson = recipe["meals"][0];
 					recipeObject = createRecipeObject(recipeJson);
 
-					for (i = 0; i < recipeObject.cuisineTypes.length; i++)
-					{
-						cuisineOptions.push(recipeObject.cuisineTypes[i]);
-					}
+					// for (i = 0; i < recipeObject.cuisineTypes.length; i++)
+					// {
+					// 	cuisineOptions.push(recipeObject.cuisineTypes[i]);
+					// }
 
 					recipeHtml = recipeToString(recipeObject);
 					document.getElementById("data").innerHTML = recipeHtml; 
