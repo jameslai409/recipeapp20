@@ -66,12 +66,10 @@ function recipeToString(recipe)
 	imageString = "<img class='recipeImg' src='" + recipe.image + "'/>";
 	html3 = "<div class='body-container'>";
 	instructionsString = "<div class='instructions'>" + recipe.instructions + "</div>";
-	html4 = "<div class='flex-container2'>";
 	ingredientsString = "<div class='ingredients'>" + arrayToUnorderedList(recipe.ingredients) + "</div>";
-	html5 = "<form class="form1" method="POST" action=""><input type="button" value="Add to Favorites" id="addToFavorites"><br/><br/><input type="button" value="NEXT RECIPE" id="refreshRecipesButton"/></form>";
 	// favoriteHiddenDiv = "<input type='text' name='favorite' id='favoriteId' style='display:none' />";
-	html += nameString + html2 + imageString + html3 + instructionsString + html4 + ingredientsString + html5;
-	html += "</div></div></div>";
+	html += nameString + html2 + imageString + html3 + instructionsString + ingredientsString;
+	html += "</div></div>";
 	return html;
 }
 
