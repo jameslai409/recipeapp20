@@ -58,33 +58,33 @@
 			//change this so that the button says 'Get 10 more recipes,' which makes another API call, but
 			//adds onto the existing recipes and adds items to the cuisine dropdown list (if they do not 
 			//already exist in the list)
-			document.getElementById("refreshRecipesButton").onclick = function()
-			{
-				// alert("here");
-				// document.getElementsByTagName("body")[0].load();
-				cuisineOptions = [];
-				document.getElementById("cuisineDropdownDiv").innerHTML = "&nbsp";
-				getRecipes();
-			}
+			// document.getElementById("refreshRecipesButton").onclick = function()
+			// {
+			// 	// alert("here");
+			// 	// document.getElementsByTagName("body")[0].load();
+			// 	cuisineOptions = [];
+			// 	document.getElementById("cuisineDropdownDiv").innerHTML = "&nbsp";
+			// 	getRecipes();
+			// }
 		}
 
-		function makeCuisineSelect()
-		{
-			var s = "<select name='cuisineList' id='cuisine-list' size='1'>";
-			s += "<option>" + "No filter" + "</option>";
-			for (k=0; k < cuisineOptions.length; k++)
-			{
-				s += "<option>" + cuisineOptions[k] + "</option>";
-			}
-			s+= "</select>";
+		// function makeCuisineSelect()
+		// {
+		// 	var s = "<select name='cuisineList' id='cuisine-list' size='1'>";
+		// 	s += "<option>" + "No filter" + "</option>";
+		// 	for (k=0; k < cuisineOptions.length; k++)
+		// 	{
+		// 		s += "<option>" + cuisineOptions[k] + "</option>";
+		// 	}
+		// 	s+= "</select>";
 			
-			return s;
-		}
+		// 	return s;
+		// }
 
-		function makeFilterSearchButton()
-		{
-			return "<input type='button' value='Search' />";
-		}
+		// function makeFilterSearchButton()
+		// {
+		// 	return "<input type='button' value='Search' />";
+		// }
 
 	</script>
 </head>
