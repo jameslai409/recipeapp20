@@ -13,6 +13,11 @@ nav {
 	justify-content: space-between;
 }
 
+a {
+	text-decoration: none;
+	color: black;
+}
+
 a.middle
 {
     position: relative;
@@ -29,6 +34,12 @@ a.middle:before {
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
+}
+
+
+a.middle:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
 }
 
 .container .jumbotron    { border-radius:40px; }
