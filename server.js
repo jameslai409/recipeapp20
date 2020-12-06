@@ -57,7 +57,9 @@ app.post('/createrecipe', function(req, res) {
 
     //redirect to same page. gets rid of POST shenanigans (timeouts)
     res.redirect('createrecipe');
-    
+    // res.render("create_recipe")
+    // alert("Recipe " + recipe["name"] + " added!");
+
 });
 
 
@@ -65,13 +67,6 @@ app.post('/createrecipe', function(req, res) {
 
 //MongoDB functions
 function insertRecipe(recipe) {
-
-    console.log("THE RECIPE name IS " + recipe["name"]);
-    console.log("THE RECIPE cuisine_type IS " + recipe["cuisine_type"]);
-    console.log("THE RECIPE prep_time IS " + recipe["prep_time"]);
-    console.log("THE RECIPE ingredients IS " + recipe["ingredients"]);
-    console.log("THE RECIPE steps IS " + recipe["steps"]);
-
     MongoClient.connect(url, function(err, db) {
         if (err) {
             console.log(err);
