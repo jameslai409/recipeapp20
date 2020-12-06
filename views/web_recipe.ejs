@@ -32,8 +32,8 @@
 					recipeJson = recipe["meals"][0];
 					recipeObject = createRecipeObject(recipeJson);
 
-					button1 = document.getElementById("addToFavorites");
-					button2 = document.getElementById("refreshRecipesButton");
+					button1 = "<input type='submit' value='ADD TO FAVORITES' id='addToFavorites'/>";
+					button2 = "<input type='button' value='NEXT RECIPE' id='refreshRecipesButton' onclick='getRecipes()'/>";
 					document.getElementById("web_recipe_form").innerHTML = "";
 					document.getElementById("web_recipe_form").innerHTML = createHiddenForm(recipeObject) + button1 + button2;
 
