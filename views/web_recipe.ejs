@@ -11,6 +11,11 @@
 		cuisineOptions = new Array();
 
 		function getRecipes() {
+			document.getElementById("refreshRecipesButton").onclick = function()
+			{
+				getRecipes();
+			}
+			
 			// Make instance of request object to make HTTP request 
 			//after page is loaded
 			request = new XMLHttpRequest();
@@ -58,18 +63,6 @@
 			//fire off the HTTP request
 			request.send();
 			console.log("4 - Request sent");
-
-			//change this so that the button says 'Get 10 more recipes,' which makes another API call, but
-			//adds onto the existing recipes and adds items to the cuisine dropdown list (if they do not 
-			//already exist in the list)
-			document.getElementById("refreshRecipesButton").onclick = function()
-			{
-			// 	// alert("here");
-			// 	// document.getElementsByTagName("body")[0].load();
-			// 	cuisineOptions = [];
-			// 	document.getElementById("cuisineDropdownDiv").innerHTML = "&nbsp";
-				getRecipes();
-			}
 
 			// document.getElementById("addToFavorites").onclick = function()
 			// {
