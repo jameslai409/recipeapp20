@@ -101,27 +101,12 @@
 		<div><a href="/shoppinglist" class="middle">Shopping List</a></div>
 	</nav>
 
-<!-- 	<form method="POST" action="">
-		<div id="cuisineDropdownDiv">
-		&nbsp;
-		<select name="cuisine_type" size="1">
-			<option value="italian">Italian</option>
-			<option value="carribbean">Carribbean</option>
-			<option value="korean">Korean</option>
-			<option value="german">German</option>
-			<option value="indian">Indian</option>
-		</select>
-		<input type="button" value="Search" />
-		</div>
-		
-	</form> -->
-
 	<form class="form1" method="POST" action="\webrecipe" id="web_recipe_form">
 		<!-- <input type="submit" value="ADD TO FAVORITES" id="addToFavorites"/> -->
 		<button type="submit" id="addToFavorites">ADD TO FAVORITES</button>
-		<button type="button" onclick="getRecipe()" id="refreshRecipesButton">NEXT RECIPE</button>
+		<button type="button" onclick="getRecipes()" id="refreshRecipesButton">NEXT RECIPE</button>
 		<!-- <input type="button" value="NEXT RECIPE" id="refreshRecipesButton"/> -->
-	</form
+	</form>
 	<div id="data">Loading...</div>
 
 <% include partials/recipeObjectFooter %>
