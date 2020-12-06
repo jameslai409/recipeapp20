@@ -68,6 +68,7 @@ app.post('/webrecipe', function(req, res) {
     //parses the recipe passed through the POST request
     var body = "";
     req.on("data", function(data) {
+        console.log("in req.on 'data'");
         body += data;
     })
     req.on("end", function() {
