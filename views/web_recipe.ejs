@@ -10,10 +10,10 @@
 	<script language="javascript">
 		cuisineOptions = new Array();
 
-		document.getElementById("refreshRecipesButton").onclick = function()
-		{
-			getRecipes();
-		}
+		// document.getElementById("refreshRecipesButton").onclick = function()
+		// {
+		// 	getRecipes();
+		// }
 
 		function getRecipes() {
 			
@@ -121,6 +121,12 @@
 	<form class="form1" method="POST" action="\webrecipe" id="web_recipe_form">
 		<input type="submit" value="ADD TO FAVORITES" id="addToFavorites"/>
 		<input type="button" value="NEXT RECIPE" id="refreshRecipesButton"/>
+		<script language="javascript">
+			document.getElementById("refreshRecipesButton").onclick = function()
+			{
+				getRecipes();
+			}
+		</script>
 	</form>
 	<div id="data">Loading...</div>
 
