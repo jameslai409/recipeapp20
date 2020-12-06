@@ -73,6 +73,28 @@ function recipeToString(recipe)
 	return html;
 }
 
+//used to send form data to backend on web_recipe.ejs page when user adds recipe to favorites
+function createHiddenForm(recipe)
+{
+	dishTypesString = arrayToString(recipe.dishTypes);
+	cuisineTypeString = arrayToString(recipe.cuisineTypes);
+	ingredientsString = arrayToString(recipe.ingredients);
+
+	apiID = "<input type='hidden' name='apiId' value='" + recipe.apiId + "''/><br/>";
+	name = "<input type='hidden' name='name' value='" + recipe.name + "''/><br/>";
+	dishTypes = "<input type='hidden' name='dishTypes' value='" + dishTypesString + "''/><br/>";
+	cuisineTypes = "<input type='hidden' name='cuisineTypes' value='" + cuisineTypeString + "''/><br/>";
+	instructions = "<input type='hidden' name='instructions' value='" + recipe.instructions + "''/><br/>";
+	ingredients = "<input type='hidden' name='ingredients' value='" + ingredientsString + "''/><br/>";
+	source = "<input type='hidden' name='source' value='" + recipe.source + "''/><br/>";
+	image = "<input type='hidden' name='image' value='" + recipe.image + "''/><br/>";
+	favorite = "<input type='hidden' name='favorite' value='" + recipe.favorite + "''/><br/>";
+
+	hiddenHtml = apiID + name + dishTypes + cuisineTypes + instructions + ingredients + source + image + favorite;
+	return hiddenHtml;
+	
+}
+
 function arrayToString(array)
 {
 	result = "";

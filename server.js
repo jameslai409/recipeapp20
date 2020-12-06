@@ -62,6 +62,31 @@ app.post('/createrecipe', function(req, res) {
 
 });
 
+//search for post requests on createrecipe (user submits recipe)
+app.post('/webrecipe', function(req, res) {
+    //parses the recipe passed through the POST request
+    var body = "";
+    req.on("data", function(data) {
+        body += data;
+    })
+    req.on("end", function() {
+        var recipe = querystring.parse(body);
+        var dishTypesArray = toArray(recipe.dishTypes);
+        var cuisineTypesArray = toArray(recipe.cuisineTypes);
+        var ingredientsArray = toArray(recipe.ingredients);
+        recipe.dishTypes = dishTypesArray;
+        recipe.cuisineTypes = cuisineTypesArray;
+        recipe.ingredients = ingredientsArray;
+        insertRecipe(recipe);
+    })
+
+    //redirect to same page. gets rid of POST shenanigans (timeouts)
+    res.redirect('webrecipe');
+    // res.render("create_recipe")
+    // alert("Recipe " + recipe["name"] + " added!");
+
+});
+
 
 
 
@@ -82,4 +107,10 @@ function insertRecipe(recipe) {
         db.close();
     });
     return;
+}
+
+//convert strings to arrays for storage in Mongo
+function toArray(commaDelimitedString)
+{
+    return commaDelimitedString.split(",");
 }
