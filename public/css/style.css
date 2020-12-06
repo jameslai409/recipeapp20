@@ -115,6 +115,7 @@ a.middle:hover:before {
 	font-size: 20px;
 	font-weight: 800;
 	margin-right: 30px;
+	text-decoration: none;
 }
 
 #refreshRecipesButton {
@@ -125,6 +126,16 @@ a.middle:hover:before {
 	font-weight: 800;
 	width: 250px;
 	height: 64px;
+	text-decoration: none;
+}
+
+#addToFavorites:hover {
+	background-color: #60eb3d;
+}
+
+#refreshRecipesButton:hover
+{
+	background-color: #f2fcf0;
 }
 
 .container .jumbotron    { border-radius:40px; }
