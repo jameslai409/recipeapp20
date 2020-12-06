@@ -10,11 +10,13 @@
 	<script language="javascript">
 		cuisineOptions = new Array();
 
+		document.getElementById("refreshRecipesButton").onclick = function()
+		{
+			getRecipes();
+		}
+
 		function getRecipes() {
-			document.getElementById("refreshRecipesButton").onclick = function()
-			{
-				getRecipes();
-			}
+			
 
 			// Make instance of request object to make HTTP request 
 			//after page is loaded
