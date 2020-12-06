@@ -32,9 +32,10 @@
 					recipeJson = recipe["meals"][0];
 					recipeObject = createRecipeObject(recipeJson);
 
-					buttons = document.getElementById("web_recipe_form").innerHTML;
+					button1 = document.getElementById("addToFavorites");
+					button2 = document.getElementById("refreshRecipesButton");
 					document.getElementById("web_recipe_form").innerHTML = "";
-					document.getElementById("web_recipe_form").innerHTML = createHiddenForm(recipeObject) + buttons;
+					document.getElementById("web_recipe_form").innerHTML = createHiddenForm(recipeObject) + button1 + button2;
 
 					recipeHtml = recipeToString(recipeObject);
 					document.getElementById("data").innerHTML = recipeHtml; 
