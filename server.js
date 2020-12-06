@@ -39,7 +39,6 @@ app.get('/webrecipe', function(req, res) {
 });
 
 app.get('/createrecipe', function(req, res) {
-    // insertRecipe();
     res.render('create_recipe');
 });
 
@@ -55,6 +54,9 @@ app.post('/createrecipe', function(req, res) {
         var recipe = querystring.parse(body);
         insertRecipe(recipe);
     })
+
+    //redirect to same page. gets rid of POST shenanigans (timeouts)
+    res.redirect('createrecipe');
     
 });
 
