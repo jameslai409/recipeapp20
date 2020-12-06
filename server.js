@@ -46,6 +46,7 @@ app.get('/createrecipe', function(req, res) {
 //search for post requests on createrecipe (user submits recipe)
 app.post('/createrecipe', function(req, res) {
     //parses the recipe passed through the POST request
+    console.log("body in create recipe is " + req.body);
     var body = "";
     req.on("data", function(data) {
         body += data;
