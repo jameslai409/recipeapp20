@@ -1,27 +1,31 @@
-const MongoClient = require('mongodb').MongoClient;
-const url = "mongodb+srv://recipeappuser:<password>@recipeappcluster.vvovx.mongodb.net";
+//variables for MongoDB
+var mongo = require('mongodb');
+var MongoClient = mongo.MongoClient;
+var url = "mongodb+srv://recipeappuser:recipeapppassword@recipeappcluster.vvovx.mongodb.net";
 
+//modules
 var express = require('express');
 var app = express();
+var querystring = require('querystring') //for extracting POST data
 
-// set the port of our application
-// process.env.PORT lets the port be set by Heroku
+//heroku chooses the port. if not supplied, its 8080
 var port = process.env.PORT || 8080;
 
-// set the view engine to ejs
+//render ejs files as html
 app.set('view engine', 'ejs');
 
 // make express look in the public directory for assets (css/js/img)
 app.use(express.static(__dirname + '/public'));
 
-// set the home page route
-app.get('/', function(req, res) {
+app.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
+});
 
-    // ejs render automatically looks in the views folder
+// set routes
+app.get('/', function(req, res) {
     res.render('index');
 });
 
-// set other routes
 app.get('/favorites', function(req, res) {
     res.render('favorites');
 });
@@ -35,22 +39,50 @@ app.get('/webrecipe', function(req, res) {
 });
 
 app.get('/createrecipe', function(req, res) {
+    // insertRecipe();
     res.render('create_recipe');
 });
 
 
-
-
-
-app.listen(port, function() {
-    console.log('Our app is running on http://localhost:' + port);
+//search for post requests on createrecipe (user submits recipe)
+app.post('/createrecipe', function(req, res) {
+    //parses the recipe passed through the POST request
+    var body = "";
+    req.on("data", function(data) {
+        body += data;
+    })
+    req.on("end", function() {
+        var recipe = querystring.parse(body);
+        insertRecipe(recipe);
+    })
+    
 });
 
-/*
-    var dbo = db.db("textbooks");
-    var collection = dbo.collection("bks");
 
-    console.log("Success!");
-    db.close();
 
-*/
+
+//MongoDB functions
+function insertRecipe(recipe) {
+
+    console.log("THE RECIPE name IS " + recipe["name"]);
+    console.log("THE RECIPE cuisine_type IS " + recipe["cuisine_type"]);
+    console.log("THE RECIPE prep_time IS " + recipe["prep_time"]);
+    console.log("THE RECIPE ingredients IS " + recipe["ingredients"]);
+    console.log("THE RECIPE steps IS " + recipe["steps"]);
+
+    MongoClient.connect(url, function(err, db) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        var dbo = db.db("recipedb");
+        var recipes = dbo.collection("recipes");
+        
+        // recipes.insertOne({"title":"FirstOne", "artist":"myself"});
+        recipes.insertOne(recipe);
+        console.log(recipe["name"] + " added.");
+
+        db.close();
+    });
+    return;
+}

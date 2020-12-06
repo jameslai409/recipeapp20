@@ -16,8 +16,8 @@
 
 	<h1>Create Your Own Recipe</h1>
 	<p style="color:red">What fields are in the form depends on what the API looks like. For ingredients and steps, maybe we can ask for the user for the # of steps/ingredients then we can loop to create matching # of text boxes???</p>
-	<form method="POST" action="">
-		Name of Dish: <input type="text" id="name" /><br/><br/>
+	<form method="POST" action="/createrecipe">
+		Name of Dish: <input type="text" name="name" id="name" /><br/><br/>
 		Category: 
 		<select name="cuisine_type" size="1">
 			<option value="italian">Italian</option>
@@ -35,8 +35,8 @@
 			<option value="120">between 1 hr and 2 hrs</option>
 			<option value="more">more than 2 hrs</option>
 		</select><br/><br/>
-		Ingredients: <input type="text" id="ingredients" /><br/><br/>
-		Steps: <input type="text" id="steps" /><br/><br/>
+		Ingredients: <input type="text" name="ingredients" id="ingredients" /><br/><br/>
+		Steps: <input type="text" name="steps" id="steps" /><br/><br/>
 		<input type="submit" value="Add to Favorites" /><br/><br/>
 	</form>
 </body>
