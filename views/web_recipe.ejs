@@ -33,9 +33,9 @@
 					// 	cuisineOptions.push(recipeObject.cuisineTypes[i]);
 					// }
 
-					buttons = document.getElementById("web_recipe_form").innerHTML;
-					document.getElementById("web_recipe_form").innerHTML = "";
-					document.getElementById("web_recipe_form").innerHTML = createHiddenForm(recipeObject) + buttons;
+					// buttons = document.getElementById("web_recipe_form").innerHTML;
+					// document.getElementById("web_recipe_form").innerHTML = "";
+					// document.getElementById("web_recipe_form").innerHTML = createHiddenForm(recipeObject) + buttons;
 
 					recipeHtml = recipeToString(recipeObject);
 					document.getElementById("data").innerHTML = recipeHtml; 
@@ -125,7 +125,7 @@
 		
 	</form> -->
 
-	<form class="form1" method="POST" action="\webrecipe" id="web_recipe_form">
+	<form class="form1" method="POST" action="" id="web_recipe_form">
 		<input type="submit" value="ADD TO FAVORITES" id="addToFavorites">
 		<input type="button" value="NEXT RECIPE" id="refreshRecipesButton"/>
 	</form>
