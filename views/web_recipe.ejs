@@ -6,7 +6,6 @@
 	<link rel="stylesheet" href="/css/style.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Righteous" />
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-	<script type='text/javascript' src='../public/js/recipeObject.js'></script>
 	<script language="javascript">
 		cuisineOptions = new Array();
 
@@ -29,14 +28,9 @@
 				if (request.readyState == 4 && request.status == 200) {
 					result = request.responseText;
 					recipe = JSON.parse(result);
-					//for now, API call only returns 1 recipe at a time
+					//API call returns 1 recipe at a time
 					recipeJson = recipe["meals"][0];
 					recipeObject = createRecipeObject(recipeJson);
-
-					// for (i = 0; i < recipeObject.cuisineTypes.length; i++)
-					// {
-					// 	cuisineOptions.push(recipeObject.cuisineTypes[i]);
-					// }
 
 					buttons = document.getElementById("web_recipe_form").innerHTML;
 					document.getElementById("web_recipe_form").innerHTML = "";
@@ -102,10 +96,10 @@
 	</nav>
 
 	<form class="form1" method="POST" action="\webrecipe" id="web_recipe_form">
-		<!-- <input type="submit" value="ADD TO FAVORITES" id="addToFavorites"/> -->
-		<button type="submit" id="addToFavorites">ADD TO FAVORITES</button>
-		<button type="button" onclick="getRecipe()" id="refreshRecipesButton">NEXT RECIPE</button>
-		<!-- <input type="button" value="NEXT RECIPE" id="refreshRecipesButton"/> -->
+		<input type="submit" value="ADD TO FAVORITES" id="addToFavorites"/>
+		<!-- <button type="submit" id="addToFavorites">ADD TO FAVORITES</button>
+		<button type="button" onclick="getRecipe()" id="refreshRecipesButton">NEXT RECIPE</button> -->
+		<input type="button" value="NEXT RECIPE" id="refreshRecipesButton"/>
 	</form>
 	<div id="data">Loading...</div>
 
