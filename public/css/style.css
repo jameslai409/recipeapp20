@@ -135,7 +135,8 @@ a.middle:hover:before {
 }
 
 #refreshRecipesButton:hover {
-	background-color: #f2fcf0;
+	/*background-color: #f2fcf0;*/
+	background-color: #f7fff5;
 }
 
 .container .jumbotron    { border-radius:40px; }
