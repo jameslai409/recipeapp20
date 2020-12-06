@@ -71,8 +71,11 @@
 				getRecipes();
 			}
 
-			var submitButton = document.getElementById("addToFavorites");
-			submitButton.addEventListener("click", informUser, false);
+			document.getElementById("addToFavorites").onclick = function()
+			{
+				alert("Recipe saved!");
+				getRecipes();
+			}
 		}
 
 		function makeCuisineSelect()
@@ -91,11 +94,6 @@
 		function makeFilterSearchButton()
 		{
 			return "<input type='button' value='Search' />";
-		}
-
-		function informUser()
-		{
-			alert("Recipe saved!");
 		}
 
 	</script>
