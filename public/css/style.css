@@ -115,18 +115,19 @@ a.middle:hover:before {
 	font-size: 20px;
 	font-weight: 800;
 	margin-right: 30px;
-	text-decoration: none;
+	outline: none;
 }
 
 #refreshRecipesButton {
 	background-color: #f2ffef;
 	border: none;
+	border-radius: 12px;
 	color: #4aef21;
 	font-size: 20px;
 	font-weight: 800;
 	width: 250px;
 	height: 64px;
-	text-decoration: none;
+	outline: none;
 }
 
 #addToFavorites:hover {
