@@ -71,6 +71,7 @@ app.post('/webrecipe', function(req, res) {
         body += data;
     })
     req.on("end", function() {
+        console.log("in req.on 'end'");
         var recipe = querystring.parse(body);
         var dishTypesArray = toArray(recipe.dishTypes);
         var cuisineTypesArray = toArray(recipe.cuisineTypes);
@@ -78,6 +79,7 @@ app.post('/webrecipe', function(req, res) {
         recipe.dishTypes = dishTypesArray;
         recipe.cuisineTypes = cuisineTypesArray;
         recipe.ingredients = ingredientsArray;
+        console.log("before insertRecipe");
         insertRecipe(recipe);
     })
 
@@ -113,5 +115,6 @@ function insertRecipe(recipe) {
 //convert strings to arrays for storage in Mongo
 function toArray(commaDelimitedString)
 {
+    console.log("in toArray");
     return commaDelimitedString.split(",");
 }
