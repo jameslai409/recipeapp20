@@ -66,6 +66,7 @@ app.get('/createrecipe', function(req, res) {
 // });
 
 app.post('/createrecipe', function(req, res) {
+    console.log(req.body);
     var reqObj = req.body;
     var ingredientsArray = toArray(reqObj.ingredients);
     reqObj.ingredients = ingredientsArray;
