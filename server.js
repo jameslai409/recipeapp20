@@ -17,6 +17,9 @@ app.set('view engine', 'ejs');
 // make express look in the public directory for assets (css/js/img)
 app.use(express.static(__dirname + '/public'));
 
+//for extracting POST data
+app.use(express.urlencoded({ extended: false }));
+
 app.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);
 });
@@ -65,6 +68,7 @@ app.post('/createrecipe', function(req, res) {
 //search for post requests on createrecipe (user submits recipe)
 app.post('/webrecipe', function(req, res) {
     console.log("in webrecipe endpoint");
+    console.log(req.body);
 
     var body = "";
     req.on('error', function(err) {
