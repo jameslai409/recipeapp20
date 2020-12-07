@@ -160,6 +160,8 @@ function getAllRecipes() {
         try
         {
             recipeObjects = recipes.find({});
+            console.log("in getAllRecipes()");
+            console.log(recipeObjects);
             db.close();
             return recipeObjects;
         }
