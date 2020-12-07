@@ -63,8 +63,16 @@ app.post('/createrecipe', function(req, res) {
 });
 
 //search for post requests on createrecipe (user submits recipe)
-app.post('/webrecipe', function(req, res) {
+app.post('/webrecipe', async function(req, res) {
     console.log("in webrecipe endpoint");
+
+    async function runAsync()
+    {
+        console.log("before redirect to webrecipe");
+        await res.redirect('webrecipe');
+    }
+
+    runAsync().catch(next);
 
     //parses the recipe passed through the POST request
     // var body = "";
@@ -90,8 +98,7 @@ app.post('/webrecipe', function(req, res) {
     // });
 
     //redirect to same page. gets rid of POST shenanigans (timeouts)
-    console.log("before redirect to webrecipe")
-    res.redirect('webrecipe');
+    // res.redirect('webrecipe');
 
     // res.render('web_recipe');
     // res.render("create_recipe")
