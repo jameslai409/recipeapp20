@@ -16,7 +16,7 @@
 					if (request.readyState == 4 && request.status == 200) {
 						// alert("success");
 						result = request.responseText;
-						alert(result);
+						// alert(result);
 						recipes = JSON.parse(result);
 						recipeObject = recipes[0];
 						// recipeObject = createRecipeObject(recipeJson);
