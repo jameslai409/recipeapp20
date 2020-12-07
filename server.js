@@ -142,6 +142,6 @@ function insertRecipe(recipe) {
 //convert strings to arrays for storage in Mongo
 function toArray(commaDelimitedString)
 {
-    console.log("in toArray");
+    // console.log("in toArray");
     return commaDelimitedString.split(",");
 }
