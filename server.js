@@ -94,6 +94,11 @@ app.post('/webrecipe', function(req, res) {
     res.redirect('webrecipe');
 });
 
+app.post('favorites', function(req, res) {
+    console.log("in favorites post endpoint");
+
+});
+
 //MongoDB functions
 function insertRecipe(recipe) {
     MongoClient.connect(url, function(err, db) {
