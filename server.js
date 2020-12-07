@@ -47,22 +47,31 @@ app.get('/createrecipe', function(req, res) {
 
 
 //search for post requests on createrecipe (user submits recipe)
+// app.post('/createrecipe', function(req, res) {
+//     //parses the recipe passed through the POST request
+//     var body = "";
+//     req.on("data", function(data) {
+//         body += data;
+//     });
+//     req.on("end", function() {
+//         var recipe = querystring.parse(body);
+//         insertRecipe(recipe);
+//     });
+
+//     //redirect to same page. gets rid of POST shenanigans (timeouts)
+//     res.redirect('createrecipe');
+//     // res.render("create_recipe")
+//     // alert("Recipe " + recipe["name"] + " added!");
+
+// });
+
 app.post('/createrecipe', function(req, res) {
-    //parses the recipe passed through the POST request
-    var body = "";
-    req.on("data", function(data) {
-        body += data;
-    });
-    req.on("end", function() {
-        var recipe = querystring.parse(body);
-        insertRecipe(recipe);
-    });
+    var reqObj = req.body;
+    var ingredientsArray = toArray(reqObj.ingredients);
+    reqObj.ingredients = ingredientsArray;
 
-    //redirect to same page. gets rid of POST shenanigans (timeouts)
+    insertRecipe(reqObj);
     res.redirect('createrecipe');
-    // res.render("create_recipe")
-    // alert("Recipe " + recipe["name"] + " added!");
-
 });
 
 //search for post requests on webrecipe (user submits recipe)
