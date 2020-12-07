@@ -154,7 +154,7 @@ function insertRecipe(recipe) {
                 else 
                 {
                     //only add recipe to database if it doesn't already exist
-                    if (items.length === 0) {
+                    if (recipe.userRecipe == "true" || (recipe.userRecipe == "false" && items.length === 0)) {
                         recipes.insertOne(recipe);
                         console.log(recipe["name"] + " added.");
                     }
