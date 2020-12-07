@@ -46,15 +46,14 @@ app.get('/createrecipe', function(req, res) {
 //search for post requests on createrecipe (user submits recipe)
 app.post('/createrecipe', function(req, res) {
     //parses the recipe passed through the POST request
-    console.log("body in create recipe is " + req.body);
     var body = "";
     req.on("data", function(data) {
         body += data;
-    })
+    });
     req.on("end", function() {
         var recipe = querystring.parse(body);
         insertRecipe(recipe);
-    })
+    });
 
     //redirect to same page. gets rid of POST shenanigans (timeouts)
     res.redirect('createrecipe');
@@ -66,13 +65,16 @@ app.post('/createrecipe', function(req, res) {
 //search for post requests on createrecipe (user submits recipe)
 app.post('/webrecipe', function(req, res) {
     console.log("in webrecipe endpoint");
-    console.log(req.body);
     //parses the recipe passed through the POST request
     var body = "";
+    req.on('error', function(err) {
+      // This prints the error message and stack trace to `stderr`.
+      console.error(err.stack);
+    });
     req.on("data", function(data) {
         console.log("in req.on 'data'");
         body += data;
-    })
+    });
     req.on("end", function() {
         console.log("in req.on 'end'");
         var recipe = querystring.parse(body);
@@ -84,7 +86,7 @@ app.post('/webrecipe', function(req, res) {
         recipe.ingredients = ingredientsArray;
         console.log("before insertRecipe");
         insertRecipe(recipe);
-    })
+    });
 
     //redirect to same page. gets rid of POST shenanigans (timeouts)
     res.redirect('webrecipe');
