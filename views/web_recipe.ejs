@@ -33,11 +33,11 @@
 					recipeObject = createRecipeObject(recipeJson);
 
 					button1 = "<input type='submit' value='ADD TO FAVORITES' id='addToFavorites'/>";
-					button2 = "<input type='button' value='NEXT RECIPE' id='refreshRecipesButton' onclick='getRecipes()'/>";
+					// button2 = "<input type='button' value='NEXT RECIPE' id='refreshRecipesButton' onclick='getRecipes()'/>";
 					document.getElementById("web_recipe_form").innerHTML = "";
 					hiddenForm = createHiddenForm(recipeObject);
 					console.log(hiddenForm);
-					document.getElementById("web_recipe_form").innerHTML = hiddenForm + button1 + button2;
+					document.getElementById("web_recipe_form").innerHTML = hiddenForm + button1;
 
 					recipeHtml = recipeToString(recipeObject);
 					document.getElementById("data").innerHTML = recipeHtml; 
@@ -99,12 +99,11 @@
 	</nav>
 
 	<form class="form1" method="POST" action="/webrecipe" id="web_recipe_form">
-		<input type="submit" value="ADD TO FAVORITES" id="addToFavorites"/>
+		<!-- <input type="submit" value="ADD TO FAVORITES" id="addToFavorites"/> -->
 		<!-- <button type="submit" id="addToFavorites">ADD TO FAVORITES</button>
 		<button type="button" onclick="getRecipes()" id="refreshRecipesButton">NEXT RECIPE</button> -->
 		<!-- <input type="button" value="NEXT RECIPE" id="refreshRecipesButton" onclick="getRecipes()"/> -->
 	</form>
-	<div> here </div>
 	<div id="data">Loading...</div>
 
 <% include partials/recipeObjectFooter %>
