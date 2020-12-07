@@ -5,6 +5,8 @@
 	<title>My Favorites</title>
 	<link rel="stylesheet" href="/css/style.css" type="text/css">
 	<script language="javascript">
+		recipeObjects = new Array();
+
 		window.onload = function() {
 				// alert("click");
 				request = new XMLHttpRequest();
@@ -18,11 +20,14 @@
 						result = request.responseText;
 						// alert(result);
 						recipes = JSON.parse(result);
-						recipeObject = recipes[0];
+						recipeObjects = recipes;
+						recipeToDisplay = recipes[0];
 						// recipeObject = createRecipeObject(recipeJson);
 
-						recipeHtml = recipeToString(recipeObject);
+						recipeHtml = recipeToString(recipeToDisplay);
 						document.getElementById("data").innerHTML = recipeHtml; 
+
+						document.getElementById("recipeDropdown").innerHTML = makeRecipeSelect();
 
 						// recipeJson = recipe["meals"][0];
 						// recipeObject = createRecipeObject(recipeJson);
@@ -43,6 +48,20 @@
 				request.send();
 				console.log("4 - Request sent");
 		}
+
+		function makeRecipeSelect()
+		{
+			var s = "<select name='recipeList' id='recipe-list' size='1'>";
+			// s += "<option>" + "No filter" + "</option>";
+			for (k=0; k < recipeObjects.length; k++)
+			{
+				s += "<option>" + recipeObjects[k].name + "</option>";
+			}
+			s+= "</select>";
+			
+			return s;
+		}
+
 	</script>
 </head>
 
@@ -56,14 +75,17 @@
 
 	<h1>My Favorites</h1>
 
-	<form method="POST" action="">
-		<select name="num_entries" size="1">
-			<option value="10">Show first 10 entries</option>
-			<option value="50">Show first 50 entries</option>
-			<option value="100">Show first 100 entries</option>
-			<option value="all">Show all entries</option>
-		</select>
-	</form>
+	<div id="recipeDropdown">
+	&nbsp;
+	</div>
+	<!-- <form method="POST" action=""> -->
+	<!-- <select name="num_entries" size="1">
+		<option value="10">Show first 10 entries</option>
+		<option value="50">Show first 50 entries</option>
+		<option value="100">Show first 100 entries</option>
+		<option value="all">Show all entries</option>
+	</select> -->
+	<!-- </form> -->
 	<div id="data">Loading...</div>
 	<form method="POST" action="">
 		<input type="button" value="Add to Shopping List" id="add"/>
