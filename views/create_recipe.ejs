@@ -15,25 +15,19 @@
 	</nav>
 
 	<h1>Create Your Own Recipe</h1>
-	<!-- <p style="color:red">What fields are in the form depends on what the API looks like. For ingredients and steps, maybe we can ask for the user for the # of steps/ingredients then we can loop to create matching # of text boxes???</p> -->
 	<form class="createYourOwnForm" method="POST" action="/createrecipe">
+		<input type="hidden" name="apiId" />
 		Name of Dish: <input type="text" name="name" id="name" /><br/><br/>
 		Dish Type: <input type="text" name="dishType" id="cuisineType" /><br/><br/>
 		Cuisine Type: <input type="text" name="cuisineType" id="cuisineType" /><br/><br/>
-		<!-- <select name="cuisine_type" size="1">
-			<option value="italian">Italian</option>
-			<option value="carribbean">Carribbean</option>
-			<option value="korean">Korean</option>
-			<option value="german">German</option>
-			<option value="indian">Indian</option>
-			<option value="others">Others</option>
-		</select><br/><br/> -->
 		<p>Ingredients (separated by commas): </p>
-		<!-- <input type="text" name="ingredients" id="ingredients" /><br/><br/> -->
-		<textarea form="createYourOwnForm" rows="2" cols="50" name="ingredients" id="ingredients"></textarea><br/><br/>
+		<textarea form="createYourOwnForm" rows="3" cols="50" name="ingredients" id="ingredients">
+		</textarea><br/><br/>
 		<p>Instructions: </p>
-		<textarea form="createYourOwnForm" rows="5" cols="50" name="instructions" id="instructions"></textarea><br/><br/>
-		<!-- Steps: <input type="text" name="steps" id="steps" /><br/><br/> -->
+		<textarea form="createYourOwnForm" rows="6" cols="50" name="instructions" id="instructions"></textarea><br/><br/>
+		<input type="hidden" name="source" />
+		<input type="hidden" name="image" />
+		<input type="hidden" name="userRecipe" value="true" />
 		<input type="submit" value="Add to Favorites" /><br/><br/>
 	</form>
 </body>
