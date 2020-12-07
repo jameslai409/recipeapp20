@@ -29,6 +29,16 @@
 
 						document.getElementById("recipeDropdown").innerHTML = makeRecipeSelect();
 
+						document.getElementById("recipe-list").onchange = function()
+						{
+							recipeName = this.selectedIndex;
+							recipeToDisplay = findObjectByKey("name", recipeName);
+							recipeHtml = recipeToString(recipeToDisplay);
+							document.getElementById("data").innerHTML = recipeHtml; 
+							// alert("Recipe saved!");
+							// getRecipes();
+						}
+
 						// recipeJson = recipe["meals"][0];
 						// recipeObject = createRecipeObject(recipeJson);
 					}
@@ -62,6 +72,16 @@
 			return s;
 		}
 
+		function findObjectByKey(key, value) {
+		    for (var i = 0; i < recipeObjects.length; i++) 
+		    {
+		        if (recipeObjects[i][key] === value) {
+		            return recipeObjects[i];
+		        }
+		    }
+		    return null;
+		}
+
 	</script>
 </head>
 
@@ -75,6 +95,7 @@
 
 	<h1>My Favorites</h1>
 
+	<h3>Jump to Recipe</h3>
 	<div id="recipeDropdown">
 	&nbsp;
 	</div>
