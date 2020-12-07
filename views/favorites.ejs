@@ -16,13 +16,13 @@
 					if (request.readyState == 4 && request.status == 200) {
 						// alert("success");
 						result = request.responseText;
-						// alert(result);
-						recipes = JSON.parse(result);
-						recipeJson = recipes[0];
-						recipeObject = createRecipeObject(recipeJson);
+						alert(result);
+						// recipes = JSON.parse(result);
+						// recipeJson = recipes[0];
+						// recipeObject = createRecipeObject(recipeJson);
 
-						recipeHtml = recipeToString(recipeObject);
-						document.getElementById("data").innerHTML = recipeHtml; 
+						// recipeHtml = recipeToString(recipeObject);
+						// document.getElementById("data").innerHTML = recipeHtml; 
 
 						// recipeJson = recipe["meals"][0];
 						// recipeObject = createRecipeObject(recipeJson);
