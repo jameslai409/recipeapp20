@@ -48,6 +48,7 @@ app.get('/createrecipe', function(req, res) {
 app.get('/favorites/recipes', function(req, res) {
     console.log("in favorites get endpoint");
     recipes = getAllRecipes();
+    console.log(recipes);
     res.send(recipes);
 });
 
