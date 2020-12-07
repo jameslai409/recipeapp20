@@ -65,57 +65,23 @@ app.post('/createrecipe', function(req, res) {
 
 });
 
-//search for post requests on createrecipe (user submits recipe)
+//search for post requests on webrecipe (user submits recipe)
 app.post('/webrecipe', function(req, res) {
-    console.log("in webrecipe endpoint");
-    // console.log(req.body);
-    console.log(req.body.name);
+    //get request object
     var reqObj = req.body;
 
+    //convert these elements into arrays (in the form they are sent as
+    //comma delimitted strings)
     var dishTypesArray = toArray(reqObj.dishTypes);
     var cuisineTypesArray = toArray(reqObj.cuisineTypes);
     var ingredientsArray = toArray(reqObj.ingredients);
-
     reqObj.dishTypes = dishTypesArray;
     reqObj.cuisineTypes = cuisineTypesArray;
     reqObj.ingredients = ingredientsArray;
-    console.log("before insertRecipe");
+   
     insertRecipe(reqObj);
 
-    // var body = "";
-    // req.on('error', function(err) {
-    //   // This prints the error message and stack trace to `stderr`.
-    //   console.error(err.stack);
-    // });
-    // req.on("data", function(data) {
-    //     console.log("in req.on 'data'");
-    //     body += data;
-    // });
-    // req.on("end", async function() {
-    //     console.log("in req.on 'end'");
-    //     var recipe = querystring.parse(body);
-    //     var dishTypesArray = toArray(recipe.dishTypes);
-    //     var cuisineTypesArray = toArray(recipe.cuisineTypes);
-    //     var ingredientsArray = toArray(recipe.ingredients);
-    //     recipe.dishTypes = dishTypesArray;
-    //     recipe.cuisineTypes = cuisineTypesArray;
-    //     recipe.ingredients = ingredientsArray;
-    //     console.log("before insertRecipe");
-    //     insertRecipe(recipe);
-    // });
-
-    console.log("before redirect to webrecipe");
     res.redirect('webrecipe');
-    
-
-    
-
-    //parses the recipe passed through the POST request
-    
-
-    //redirect to same page. gets rid of POST shenanigans (timeouts)
-    // res.redirect('webrecipe');
-
 });
 
 
@@ -130,13 +96,34 @@ function insertRecipe(recipe) {
         }
         var dbo = db.db("recipedb");
         var recipes = dbo.collection("recipes");
-        
+
+        recipes.find({apiId : recipe["apiId"]}).toArray(function(err, items) {
+
+            if (err) 
+            {
+                console.log("Error: " + err);
+            } 
+            else 
+            {
+                //only add recipe to database if it doesn't already exist
+                if (items.length === 0) {
+                    recipes.insertOne(recipe);
+                    console.log(recipe["name"] + " added.");
+                }
+                else 
+                {
+                    console.log(recipe["name"] + "already exists. Not added.");
+                }
+            }
+
+        }); //end find
+
         // recipes.insertOne({"title":"FirstOne", "artist":"myself"});
-        recipes.insertOne(recipe);
-        console.log(recipe["name"] + " added.");
+        // recipes.insertOne(recipe);
+        // console.log(recipe["name"] + " added.");
 
         db.close();
-    });
+    }); //end connect
     return;
 }
 
