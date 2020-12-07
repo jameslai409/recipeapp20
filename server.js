@@ -197,7 +197,7 @@ async function getAllRecipes() {
         {
             console.log("in getAllRecipes()");
             // recipeObjects = recipes.find({});
-            await recipes.find().toArray(function(err, items) {
+            recipes.find().toArray(function(err, items) {
               if (err) 
               {
                 console.log("Error: " + err);
