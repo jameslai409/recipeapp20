@@ -1,4 +1,4 @@
-function Recipe(apiId, name, dishTypes, cuisineTypes, instructions, ingredients, source, photo)
+function Recipe(apiId, name, dishTypes, cuisineTypes, instructions, ingredients, source, photo, userRecipe)
 {
 	//integer
 	this.apiId = apiId;
@@ -17,7 +17,7 @@ function Recipe(apiId, name, dishTypes, cuisineTypes, instructions, ingredients,
 	//string
 	this.image = photo;
 	//boolean
-	this.favorite = false;
+	this.userRecipe = userRecipe;
 }
 
 //create Recipe object from JSON retrieved from API call 
@@ -51,7 +51,7 @@ function createRecipeObject(recipe)
 
 	return new Recipe(recipe["idMeal"], recipe["strMeal"], recipe["strCategory"].split(","), 
 					  recipe["strArea"].split(","), recipe["strInstructions"], ingredients, 
-					  recipe["strSource"], recipe["strMealThumb"]);
+					  recipe["strSource"], recipe["strMealThumb"], false);
 }
 
 function recipeToString(recipe)
@@ -88,9 +88,9 @@ function createHiddenForm(recipe)
 	ingredients = "<input type='hidden' name='ingredients' value='" + ingredientsString + "'/>";
 	source = "<input type='hidden' name='source' value='" + recipe.source + "'/>";
 	image = "<input type='hidden' name='image' value='" + recipe.image + "'/>";
-	favorite = "<input type='hidden' name='favorite' value='" + recipe.favorite + "'/>";
+	userRecipe = "<input type='hidden' name='userRecipe' value='" + recipe.userRecipe + "'/>";
 
-	hiddenHtml = apiID + name + dishTypes + cuisineTypes + instructions + ingredients + source + image + favorite;
+	hiddenHtml = apiID + name + dishTypes + cuisineTypes + instructions + ingredients + source + image + userRecipe;
 	return hiddenHtml;
 	
 }

@@ -131,12 +131,13 @@ a.middle:hover:before {
 }
 
 #addToFavorites:hover {
-	background-color: #60eb3d;
+	/*background-color: #60eb3d;*/
+	background-color: #59de37;
 }
 
 #refreshRecipesButton:hover {
 	/*background-color: #f2fcf0;*/
-	background-color: #e6f2e4;
+	background-color: #e3f0e1;
 }
 
 .container .jumbotron    { border-radius:40px; }
