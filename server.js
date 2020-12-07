@@ -45,9 +45,9 @@ app.get('/createrecipe', function(req, res) {
     res.render('create_recipe');
 });
 
-app.get('/favorites/recipes', function(req, res) {
+app.get('/favorites/recipes', async function(req, res) {
     console.log("in favorites get endpoint");
-    recipes = getAllRecipes();
+    recipes = await getAllRecipes();
     console.log(recipes);
     res.send(recipes);
 });
