@@ -159,7 +159,7 @@ function getAllRecipes() {
 
         try
         {
-            recipeObjects = recipes.find();
+            recipeObjects = recipes.find({});
             db.close();
             return recipeObjects;
         }
