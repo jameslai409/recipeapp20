@@ -32,6 +32,7 @@
 						document.getElementById("recipe-list").onchange = function()
 						{
 							recipeName = this.selectedIndex;
+							alert(recipeName);
 							recipeToDisplay = findObjectByKey("name", recipeName);
 							recipeHtml = recipeToString(recipeToDisplay);
 							document.getElementById("data").innerHTML = recipeHtml; 
