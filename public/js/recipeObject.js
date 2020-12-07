@@ -63,7 +63,7 @@ function recipeToString(recipe)
 	// cuisineTypeString = recipe.cuisineTypes.length == 0 ? "" :
 	// 				"<div class='recipeCuisineTypes'>Cuisine type(s): " + arrayToString(recipe.cuisineTypes) + "</dic>";
 	html2 = "<div class='flex-container'>";
-	imageString = recipe.userRecipe ? "" : "<img class='recipeImg' src='" + recipe.image + "'/>";
+	imageString = recipe.userRecipe === "true" ? "" : "<img class='recipeImg' src='" + recipe.image + "'/>";
 	html3 = "<div class='body-container'>";
 	instructionsString = "<div class='instructions'>" + recipe.instructions + "</div>";
 	ingredientsString = "<div class='ingredients'>" + arrayToUnorderedList(recipe.ingredients) + "</div>";
