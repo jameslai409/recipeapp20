@@ -70,13 +70,9 @@ app.post('/webrecipe', function(req, res) {
     //get request object
     var reqObj = req.body;
 
-    //convert these elements into arrays (in the form they are sent as
+    //convert these elements into array (in the form they are sent as
     //comma delimitted strings)
-    var dishTypesArray = toArray(reqObj.dishTypes);
-    var cuisineTypesArray = toArray(reqObj.cuisineTypes);
     var ingredientsArray = toArray(reqObj.ingredients);
-    reqObj.dishTypes = dishTypesArray;
-    reqObj.cuisineTypes = cuisineTypesArray;
     reqObj.ingredients = ingredientsArray;
    
     insertRecipe(reqObj);

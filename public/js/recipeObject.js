@@ -1,13 +1,13 @@
-function Recipe(apiId, name, dishTypes, cuisineTypes, instructions, ingredients, source, photo, userRecipe)
+function Recipe(apiId, name, dishType, cuisineType, instructions, ingredients, source, photo, userRecipe)
 {
 	//integer
 	this.apiId = apiId;
 	//string
 	this.name = name;
-	//array of strings
-	this.dishTypes = dishTypes;
-	//array of strings
-	this.cuisineTypes = cuisineTypes;
+	//string
+	this.dishType = dishType;
+	//string
+	this.cuisineType = cuisineType;
 	//formatted string
 	this.instructions = instructions;
 	//array of strings
@@ -49,8 +49,8 @@ function createRecipeObject(recipe)
 
 	}
 
-	return new Recipe(recipe["idMeal"], recipe["strMeal"], recipe["strCategory"].split(","), 
-					  recipe["strArea"].split(","), recipe["strInstructions"], ingredients, 
+	return new Recipe(recipe["idMeal"], recipe["strMeal"], recipe["strCategory"], 
+					  recipe["strArea"], recipe["strInstructions"], ingredients, 
 					  recipe["strSource"], recipe["strMealThumb"], false);
 }
 
@@ -76,21 +76,19 @@ function recipeToString(recipe)
 //used to send form data to backend on web_recipe.ejs page when user adds recipe to favorites
 function createHiddenForm(recipe)
 {
-	dishTypesString = arrayToString(recipe.dishTypes);
-	cuisineTypeString = arrayToString(recipe.cuisineTypes);
 	ingredientsString = arrayToString(recipe.ingredients);
 
 	apiID = "<input type='hidden' name='apiId' value='" + recipe.apiId + "'/>";
 	name = "<input type='hidden' name='name' value='" + recipe.name + "'/>";
-	dishTypes = "<input type='hidden' name='dishTypes' value='" + dishTypesString + "'/>";
-	cuisineTypes = "<input type='hidden' name='cuisineTypes' value='" + cuisineTypeString + "'/>";
+	dishType = "<input type='hidden' name='dishTypes' value='" + recipe.dishType + "'/>";
+	cuisineType = "<input type='hidden' name='cuisineTypes' value='" + recipe.cuisineType + "'/>";
 	instructions = "<input type='hidden' name='instructions' value='" + recipe.instructions + "'/>";
 	ingredients = "<input type='hidden' name='ingredients' value='" + ingredientsString + "'/>";
 	source = "<input type='hidden' name='source' value='" + recipe.source + "'/>";
 	image = "<input type='hidden' name='image' value='" + recipe.image + "'/>";
 	userRecipe = "<input type='hidden' name='userRecipe' value='" + recipe.userRecipe + "'/>";
 
-	hiddenHtml = apiID + name + dishTypes + cuisineTypes + instructions + ingredients + source + image + userRecipe;
+	hiddenHtml = apiID + name + dishType + cuisineType + instructions + ingredients + source + image + userRecipe;
 	return hiddenHtml;
 	
 }
