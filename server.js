@@ -46,7 +46,6 @@ app.get('/createrecipe', function(req, res) {
 });
 
 
-//search for post requests on createrecipe (user submits recipe)
 // app.post('/createrecipe', function(req, res) {
 //     //parses the recipe passed through the POST request
 //     var body = "";
@@ -65,9 +64,14 @@ app.get('/createrecipe', function(req, res) {
 
 // });
 
+//search for post requests on createrecipe (user submits recipe)
 app.post('/createrecipe', function(req, res) {
-    console.log(req.body);
+    // console.log(req.body);
+    //get request object
     var reqObj = req.body;
+
+    //convert these elements into array (in the form they are sent as
+    //comma delimitted strings)
     var ingredientsArray = toArray(reqObj.ingredients);
     reqObj.ingredients = ingredientsArray;
 
@@ -89,9 +93,6 @@ app.post('/webrecipe', function(req, res) {
 
     res.redirect('webrecipe');
 });
-
-
-
 
 //MongoDB functions
 function insertRecipe(recipe) {
@@ -133,10 +134,6 @@ function insertRecipe(recipe) {
             console.log("Error trying to insert in database");
             console.log(e);
         }
-
-        // recipes.insertOne({"title":"FirstOne", "artist":"myself"});
-        // recipes.insertOne(recipe);
-        // console.log(recipe["name"] + " added.");
 
     }); //end connect
     return;
