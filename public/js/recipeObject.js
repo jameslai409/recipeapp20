@@ -80,15 +80,15 @@ function createHiddenForm(recipe)
 	cuisineTypeString = arrayToString(recipe.cuisineTypes);
 	ingredientsString = arrayToString(recipe.ingredients);
 
-	apiID = "<input type='hidden' name='apiId' value='" + recipe.apiId + "''/>";
-	name = "<input type='hidden' name='name' value='" + recipe.name + "''/>";
-	dishTypes = "<input type='hidden' name='dishTypes' value='" + dishTypesString + "''/>";
-	cuisineTypes = "<input type='hidden' name='cuisineTypes' value='" + cuisineTypeString + "''/>";
-	instructions = "<input type='hidden' name='instructions' value='" + recipe.instructions + "''/>";
-	ingredients = "<input type='hidden' name='ingredients' value='" + ingredientsString + "''/>";
-	source = "<input type='hidden' name='source' value='" + recipe.source + "''/>";
-	image = "<input type='hidden' name='image' value='" + recipe.image + "''/>";
-	favorite = "<input type='hidden' name='favorite' value='" + recipe.favorite + "''/>";
+	apiID = "<input type='hidden' name='apiId' value='" + recipe.apiId + "'/>";
+	name = "<input type='hidden' name='name' value='" + recipe.name + "'/>";
+	dishTypes = "<input type='hidden' name='dishTypes' value='" + dishTypesString + "'/>";
+	cuisineTypes = "<input type='hidden' name='cuisineTypes' value='" + cuisineTypeString + "'/>";
+	instructions = "<input type='hidden' name='instructions' value='" + recipe.instructions + "'/>";
+	ingredients = "<input type='hidden' name='ingredients' value='" + ingredientsString + "'/>";
+	source = "<input type='hidden' name='source' value='" + recipe.source + "'/>";
+	image = "<input type='hidden' name='image' value='" + recipe.image + "'/>";
+	favorite = "<input type='hidden' name='favorite' value='" + recipe.favorite + "'/>";
 
 	hiddenHtml = apiID + name + dishTypes + cuisineTypes + instructions + ingredients + source + image + favorite;
 	return hiddenHtml;
