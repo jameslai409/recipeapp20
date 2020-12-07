@@ -46,7 +46,9 @@ app.get('/createrecipe', function(req, res) {
 });
 
 app.get('/favorites/recipes', function(req, res) {
-    console.log("in favorites post endpoint");
+    console.log("in favorites get endpoint");
+    recipes = getAllRecipes();
+    res.send(recipes);
 });
 
 // app.post('/createrecipe', function(req, res) {
@@ -100,7 +102,8 @@ app.post('/webrecipe', function(req, res) {
 //MongoDB functions
 function insertRecipe(recipe) {
     MongoClient.connect(url, function(err, db) {
-        if (err) {
+        if (err) 
+        {
             console.log(err);
             return;
         }
@@ -131,6 +134,33 @@ function insertRecipe(recipe) {
 
                 db.close();
             }); //end find
+        }
+        catch (e)
+        {
+            console.log("Error trying to insert in database");
+            console.log(e);
+        }
+
+    }); //end connect
+    return;
+}
+
+function getAllRecipes() {
+    MongoClient.connect(url, function(err, db) {
+        if (err) 
+        {
+            console.log(err);
+            return;
+        }
+
+        var dbo = db.db("recipedb");
+        var recipes = dbo.collection("recipes");
+
+        try
+        {
+            recipeObjects = recipes.find();
+            db.close();
+            return recipeObjects;
         }
         catch (e)
         {

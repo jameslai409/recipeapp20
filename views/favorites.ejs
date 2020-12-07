@@ -14,9 +14,10 @@
 				request.onreadystatechange = function() {
 					// wait for done + success
 					if (request.readyState == 4 && request.status == 200) {
-						alert("success");
-						// result = request.responseText;
-						// recipe = JSON.parse(result);
+						// alert("success");
+						result = request.responseText;
+						alert(result);
+						recipe = JSON.parse(result);
 
 						// recipeJson = recipe["meals"][0];
 						// recipeObject = createRecipeObject(recipeJson);
