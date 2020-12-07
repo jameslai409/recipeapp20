@@ -45,6 +45,9 @@ app.get('/createrecipe', function(req, res) {
     res.render('create_recipe');
 });
 
+app.get('/favorites/recipes', function(req, res) {
+    console.log("in favorites post endpoint");
+});
 
 // app.post('/createrecipe', function(req, res) {
 //     //parses the recipe passed through the POST request
@@ -92,11 +95,6 @@ app.post('/webrecipe', function(req, res) {
     insertRecipe(reqObj);
 
     res.redirect('webrecipe');
-});
-
-app.post('favorites', function(req, res) {
-    console.log("in favorites post endpoint");
-
 });
 
 //MongoDB functions

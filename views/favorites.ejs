@@ -6,10 +6,9 @@
 	<link rel="stylesheet" href="/css/style.css" type="text/css">
 	<script language="javascript">
 		window.onload = function() {
-			document.getElementById("add").onclick = function() {
 				// alert("click");
 				request = new XMLHttpRequest();
-				request.open("GET", "/createrecipe");
+				request.open("GET", "/favorites/recipes");
 	 
 				// set up event handler/callback
 				request.onreadystatechange = function() {
@@ -37,7 +36,6 @@
 				//fire off the HTTP request
 				request.send();
 				console.log("4 - Request sent");
-			}
 		}
 	</script>
 </head>
