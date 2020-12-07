@@ -69,7 +69,8 @@ app.post('/webrecipe', async(req, res, next) => {
     async function runAsync()
     {
         console.log("before redirect to webrecipe");
-        await res.redirect('webrecipe');
+        // await res.redirect('webrecipe');
+        await res.render("web_recipe");
     }
 
     runAsync().catch(next);
@@ -99,10 +100,6 @@ app.post('/webrecipe', async(req, res, next) => {
 
     //redirect to same page. gets rid of POST shenanigans (timeouts)
     // res.redirect('webrecipe');
-
-    // res.render('web_recipe');
-    // res.render("create_recipe")
-    // alert("Recipe " + recipe["name"] + " added!");
 
 });
 
