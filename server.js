@@ -66,13 +66,20 @@ app.post('/createrecipe', function(req, res) {
 app.post('/webrecipe', async function(req, res) {
     console.log("in webrecipe endpoint");
 
-    async function runAsync()
-    {
+    try {
         console.log("before redirect to webrecipe");
         await res.redirect('webrecipe');
+    } catch (error) {
+        return next(error);
     }
 
-    runAsync().catch(next);
+    // async function runAsync()
+    // {
+    //     console.log("before redirect to webrecipe");
+    //     await res.redirect('webrecipe');
+    // }
+
+    // runAsync().catch(next);
 
     //parses the recipe passed through the POST request
     // var body = "";
