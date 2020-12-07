@@ -31,9 +31,9 @@
 
 						document.getElementById("recipe-list").onchange = function()
 						{
-							recipeName = this.selectedIndex;
+							recipeNameIndex = this.selectedIndex;
 							alert(recipeName);
-							recipeToDisplay = findObjectByKey("name", recipeName);
+							recipeToDisplay = findObjectByKey("name", recipeObjects[recipeNameIndex]);
 							recipeHtml = recipeToString(recipeToDisplay);
 							document.getElementById("data").innerHTML = recipeHtml; 
 							// alert("Recipe saved!");
