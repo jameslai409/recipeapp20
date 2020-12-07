@@ -115,7 +115,7 @@ function insertRecipe(recipe) {
                     }
                     else 
                     {
-                        console.log(recipe["name"] + "already exists. Not added.");
+                        console.log(recipe["name"] + " already exists. Not added.");
                     }
                 }
 
@@ -131,7 +131,7 @@ function insertRecipe(recipe) {
         // recipes.insertOne({"title":"FirstOne", "artist":"myself"});
         // recipes.insertOne(recipe);
         // console.log(recipe["name"] + " added.");
-        
+
     }); //end connect
     return;
 }
