@@ -68,7 +68,8 @@ app.post('/createrecipe', function(req, res) {
 //search for post requests on createrecipe (user submits recipe)
 app.post('/webrecipe', function(req, res) {
     console.log("in webrecipe endpoint");
-    console.log(req.body);
+    // console.log(req.body);
+    console.log(req.body.name);
 
     var body = "";
     req.on('error', function(err) {
