@@ -63,23 +63,16 @@ app.post('/createrecipe', function(req, res) {
 });
 
 //search for post requests on createrecipe (user submits recipe)
-app.post('/webrecipe', async function(req, res) {
+app.post('/webrecipe', async(req, res, next) => {
     console.log("in webrecipe endpoint");
 
-    try {
+    async function runAsync()
+    {
         console.log("before redirect to webrecipe");
         await res.redirect('webrecipe');
-    } catch (error) {
-        return next(error);
     }
 
-    // async function runAsync()
-    // {
-    //     console.log("before redirect to webrecipe");
-    //     await res.redirect('webrecipe');
-    // }
-
-    // runAsync().catch(next);
+    runAsync().catch(next);
 
     //parses the recipe passed through the POST request
     // var body = "";
