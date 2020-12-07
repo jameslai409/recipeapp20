@@ -68,6 +68,11 @@
 			// }
 		}
 
+		function alertUser()
+		{
+			alert("Recipe saved!");
+		}
+
 		// function makeCuisineSelect()
 		// {
 		// 	var s = "<select name='cuisineList' id='cuisine-list' size='1'>";
@@ -98,7 +103,7 @@
 		<div><a href="/shoppinglist" class="middle">Shopping List</a></div>
 	</nav>
 
-	<form class="form1" method="POST" action="/webrecipe" id="web_recipe_form">
+	<form class="form1" method="POST" action="/webrecipe" id="web_recipe_form" onsubmit="return alertUser()">
 		<!-- <input type="submit" value="ADD TO FAVORITES" id="addToFavorites"/> -->
 		<!-- <button type="submit" id="addToFavorites">ADD TO FAVORITES</button>
 		<button type="button" onclick="getRecipes()" id="refreshRecipesButton">NEXT RECIPE</button> -->

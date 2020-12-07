@@ -4,6 +4,12 @@
 	<meta charset="utf-8"> 
 	<title>Create Your Own Recipe</title>
 	<link rel="stylesheet" href="/css/style.css" type="text/css">
+	<script>
+		function alertUser()
+		{
+			alert("Recipe saved!");
+		}
+	</script>
 </head>
 
 <body>
@@ -15,7 +21,7 @@
 	</nav>
 
 	<h1>Create Your Own Recipe</h1>
-	<form class="createYourOwnForm" method="POST" action="/createrecipe">
+	<form class="createYourOwnForm" method="POST" action="/createrecipe" onsubmit="return alertUser()">
 		<input type="hidden" name="apiId" />
 		Name of Dish: <input type="text" name="name" id="name" /><br/><br/>
 		Dish Type: <input type="text" name="dishType" id="cuisineType" /><br/><br/>
