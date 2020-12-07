@@ -159,11 +159,24 @@ function getAllRecipes() {
 
         try
         {
-            recipeObjects = recipes.find({});
             console.log("in getAllRecipes()");
-            console.log(recipeObjects);
+            // recipeObjects = recipes.find({});
+            recipes.find().toArray(function(err, items) {
+              if (err) {
+                console.log("Error: " + err);
+              } 
+              else 
+              {
+                console.log("Items: ");
+                for (i=0; i<items.length; i++)
+                    console.log(items[i]);             
+              }   
+              // db.close();
+            
+            // console.log(recipeObjects);
             db.close();
-            return recipeObjects;
+            // return recipeObjects;
+            return;
         }
         catch (e)
         {
