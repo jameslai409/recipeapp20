@@ -174,7 +174,8 @@ function getAllRecipes() {
               // db.close();
             
             // console.log(recipeObjects);
-            db.close();
+                db.close();
+            }
             // return recipeObjects;
             return;
         }
