@@ -97,26 +97,35 @@ function insertRecipe(recipe) {
         var dbo = db.db("recipedb");
         var recipes = dbo.collection("recipes");
 
-        recipes.find({apiId : recipe["apiId"]}).toArray(function(err, items) {
+        try
+        {
 
-            if (err) 
-            {
-                console.log("Error: " + err);
-            } 
-            else 
-            {
-                //only add recipe to database if it doesn't already exist
-                if (items.length === 0) {
-                    recipes.insertOne(recipe);
-                    console.log(recipe["name"] + " added.");
-                }
+            recipes.find({apiId : recipe["apiId"]}).toArray(function(err, items) {
+
+                if (err) 
+                {
+                    console.log("Error: " + err);
+                } 
                 else 
                 {
-                    console.log(recipe["name"] + "already exists. Not added.");
+                    //only add recipe to database if it doesn't already exist
+                    if (items.length === 0) {
+                        recipes.insertOne(recipe);
+                        console.log(recipe["name"] + " added.");
+                    }
+                    else 
+                    {
+                        console.log(recipe["name"] + "already exists. Not added.");
+                    }
                 }
-            }
 
-        }); //end find
+            }); //end find
+        }
+        catch (e)
+        {
+            console.log("Error trying to insert in database");
+            console.log(e);
+        }
 
         // recipes.insertOne({"title":"FirstOne", "artist":"myself"});
         // recipes.insertOne(recipe);
