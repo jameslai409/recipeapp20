@@ -45,47 +45,42 @@ app.get('/createrecipe', function(req, res) {
     res.render('create_recipe');
 });
 
-app.get('/favorites/recipes', async function(req, res) {
+app.get('/favorites/recipes', function(req, res) {
     console.log("in favorites get endpoint");
-    recipes = await getAllRecipes();
-    res.send(recipes);
-    // console.log(recipes);
-    // MongoClient.connect(url, function(err, db) {
-    //     if (err) 
-    //     {
-    //         console.log(err);
-    //         return;
-    //     }
 
-    //     var dbo = db.db("recipedb");
-    //     var recipes = dbo.collection("recipes");
+    MongoClient.connect(url, function(err, db) {
+        if (err) 
+        {
+            console.log(err);
+            return;
+        }
 
-    //     try
-    //     {
-    //         console.log("in connect");
-    //         // recipeObjects = recipes.find({});
-    //         recipes.find().toArray(function(err, items) {
-    //           if (err) 
-    //           {
-    //             console.log("Error: " + err);
-    //             db.close();
-    //           } 
-    //           else 
-    //           {
-    //             db.close();
-    //             res.send(items);             
-    //           }   
-    //         });
-    //     }
-    //     catch (e)
-    //     {
-    //         console.log("Error trying to insert in database");
-    //         console.log(e);
-    //         db.close();
-    //     }
+        var dbo = db.db("recipedb");
+        var recipes = dbo.collection("recipes");
 
-    // }); //end connect
-    // res.send(recipes);
+        try
+        {
+            recipes.find().toArray(function(err, items) {
+              if (err) 
+              {
+                console.log("Error: " + err);
+                db.close();
+              } 
+              else 
+              {
+                db.close();
+                res.send(items);            
+              }   
+            });
+        }
+        catch (e)
+        {
+            console.log("Error trying to insert in database");
+            console.log(e);
+            db.close();
+        }
+
+    }); //end connect
 });
 
 // app.post('/createrecipe', function(req, res) {
@@ -182,54 +177,43 @@ function insertRecipe(recipe) {
     return;
 }
 
-async function getAllRecipes() {
-    MongoClient.connect(url, function(err, db) {
-        if (err) 
-        {
-            console.log(err);
-            return;
-        }
+// function getAllRecipes() {
+//     MongoClient.connect(url, function(err, db) {
+//         if (err) 
+//         {
+//             console.log(err);
+//             return;
+//         }
 
-        var dbo = db.db("recipedb");
-        var recipes = dbo.collection("recipes");
+//         var dbo = db.db("recipedb");
+//         var recipes = dbo.collection("recipes");
 
-        try
-        {
-            console.log("in getAllRecipes()");
-            // recipeObjects = recipes.find({});
-            recipes.find().toArray(function(err, items) {
-              if (err) 
-              {
-                console.log("Error: " + err);
-                db.close();
-              } 
-              else 
-              {
-                db.close();
-                // console.log(items[0]);
-                return items;
-                // console.log("Items: ");
-                // for (i=0; i<items.length; i++)
-                //     console.log(items[i]);             
-              }   
-              // db.close();
-            
-            // console.log(recipeObjects);
-                // db.close();
-            });
-            // return recipeObjects;
-            // return;
-        }
-        catch (e)
-        {
-            console.log("Error trying to insert in database");
-            console.log(e);
-            db.close();
-        }
+//         try
+//         {
+//             console.log("in getAllRecipes()");
+//             recipes.find().toArray(function(err, items) {
+//               if (err) 
+//               {
+//                 console.log("Error: " + err);
+//                 db.close();
+//               } 
+//               else 
+//               {
+//                 db.close();
+//                 return items;         
+//               }   
+//             });
+//         }
+//         catch (e)
+//         {
+//             console.log("Error trying to insert in database");
+//             console.log(e);
+//             db.close();
+//         }
 
-    }); //end connect
-    return;
-}
+//     }); //end connect
+//     return;
+// }
 
 //convert strings to arrays for storage in Mongo
 function toArray(commaDelimitedString)
