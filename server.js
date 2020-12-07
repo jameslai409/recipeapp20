@@ -70,28 +70,39 @@ app.post('/webrecipe', function(req, res) {
     console.log("in webrecipe endpoint");
     // console.log(req.body);
     console.log(req.body.name);
+    var reqObj = req.body;
 
-    var body = "";
-    req.on('error', function(err) {
-      // This prints the error message and stack trace to `stderr`.
-      console.error(err.stack);
-    });
-    req.on("data", function(data) {
-        console.log("in req.on 'data'");
-        body += data;
-    });
-    req.on("end", async function() {
-        console.log("in req.on 'end'");
-        var recipe = querystring.parse(body);
-        var dishTypesArray = toArray(recipe.dishTypes);
-        var cuisineTypesArray = toArray(recipe.cuisineTypes);
-        var ingredientsArray = toArray(recipe.ingredients);
-        recipe.dishTypes = dishTypesArray;
-        recipe.cuisineTypes = cuisineTypesArray;
-        recipe.ingredients = ingredientsArray;
-        console.log("before insertRecipe");
-        insertRecipe(recipe);
-    });
+    var dishTypesArray = toArray(reqObj.dishTypes);
+    var cuisineTypesArray = toArray(reqObj.cuisineTypes);
+    var ingredientsArray = toArray(reqObj.ingredients);
+
+    reqObj.dishTypes = dishTypesArray;
+    reqObj.cuisineTypes = cuisineTypesArray;
+    reqObj.ingredients = ingredientsArray;
+    console.log("before insertRecipe");
+    insertRecipe(reqObj);
+
+    // var body = "";
+    // req.on('error', function(err) {
+    //   // This prints the error message and stack trace to `stderr`.
+    //   console.error(err.stack);
+    // });
+    // req.on("data", function(data) {
+    //     console.log("in req.on 'data'");
+    //     body += data;
+    // });
+    // req.on("end", async function() {
+    //     console.log("in req.on 'end'");
+    //     var recipe = querystring.parse(body);
+    //     var dishTypesArray = toArray(recipe.dishTypes);
+    //     var cuisineTypesArray = toArray(recipe.cuisineTypes);
+    //     var ingredientsArray = toArray(recipe.ingredients);
+    //     recipe.dishTypes = dishTypesArray;
+    //     recipe.cuisineTypes = cuisineTypesArray;
+    //     recipe.ingredients = ingredientsArray;
+    //     console.log("before insertRecipe");
+    //     insertRecipe(recipe);
+    // });
 
     console.log("before redirect to webrecipe");
     res.redirect('webrecipe');
