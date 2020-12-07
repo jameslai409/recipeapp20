@@ -80,8 +80,8 @@ function createHiddenForm(recipe)
 
 	apiID = "<input type='hidden' name='apiId' value='" + recipe.apiId + "'/>";
 	name = "<input type='hidden' name='name' value='" + recipe.name + "'/>";
-	dishType = "<input type='hidden' name='dishTypes' value='" + recipe.dishType + "'/>";
-	cuisineType = "<input type='hidden' name='cuisineTypes' value='" + recipe.cuisineType + "'/>";
+	dishType = "<input type='hidden' name='dishType' value='" + recipe.dishType + "'/>";
+	cuisineType = "<input type='hidden' name='cuisineType' value='" + recipe.cuisineType + "'/>";
 	instructions = "<input type='hidden' name='instructions' value='" + recipe.instructions + "'/>";
 	ingredients = "<input type='hidden' name='ingredients' value='" + ingredientsString + "'/>";
 	source = "<input type='hidden' name='source' value='" + recipe.source + "'/>";
