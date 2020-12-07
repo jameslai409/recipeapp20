@@ -175,7 +175,7 @@ function getAllRecipes() {
             
             // console.log(recipeObjects);
                 db.close();
-            }
+            });
             // return recipeObjects;
             return;
         }
