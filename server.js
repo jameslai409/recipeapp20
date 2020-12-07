@@ -162,27 +162,32 @@ function getAllRecipes() {
             console.log("in getAllRecipes()");
             // recipeObjects = recipes.find({});
             recipes.find().toArray(function(err, items) {
-              if (err) {
+              if (err) 
+              {
                 console.log("Error: " + err);
+                db.close();
               } 
               else 
               {
-                console.log("Items: ");
-                for (i=0; i<items.length; i++)
-                    console.log(items[i]);             
+                db.close();
+                return items;
+                // console.log("Items: ");
+                // for (i=0; i<items.length; i++)
+                //     console.log(items[i]);             
               }   
               // db.close();
             
             // console.log(recipeObjects);
-                db.close();
+                // db.close();
             });
             // return recipeObjects;
-            return;
+            // return;
         }
         catch (e)
         {
             console.log("Error trying to insert in database");
             console.log(e);
+            db.close();
         }
 
     }); //end connect
