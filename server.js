@@ -119,6 +119,7 @@ function insertRecipe(recipe) {
                     }
                 }
 
+                db.close();
             }); //end find
         }
         catch (e)
@@ -130,8 +131,7 @@ function insertRecipe(recipe) {
         // recipes.insertOne({"title":"FirstOne", "artist":"myself"});
         // recipes.insertOne(recipe);
         // console.log(recipe["name"] + " added.");
-
-        db.close();
+        
     }); //end connect
     return;
 }
