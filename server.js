@@ -170,6 +170,7 @@ function getAllRecipes() {
               else 
               {
                 db.close();
+                console.log(items[0]);
                 return items;
                 // console.log("Items: ");
                 // for (i=0; i<items.length; i++)
