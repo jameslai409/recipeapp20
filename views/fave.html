@@ -8,12 +8,24 @@
 </head>
 
 <body>
-	<div id="recipeDropdown">
-	<select name='recipeList' id='recipe-list' size='1'>";
-		<option>Tandoori chicken</option>
-		<option>Cookies</option>
-		<option>3</option>
-	</select>
-</div>
+
+	<h1 style="text-align:center; font-weight:400;">Create Your Own Recipe</h1>
+	<div class="creatyourrecipe">
+	<form class="createYourOwnForm" method="POST" action="/createrecipe" onsubmit="return alertUser()">
+		<input type="hidden" name="apiId" />
+		Name of Dish: <br/><br/><input type="text" name="name" id="name" /><br/><br/>
+		Dish Type:  <br/><br/><input type="text" name="dishType" id="cuisineType" /><br/><br/>
+		Cuisine Type:  <br/><br/><input type="text" name="cuisineType" id="cuisineType" /><br/><br/>
+		<p>Ingredients with quantities (separated by commas): </p>
+		<textarea rows="3" cols="50" name="ingredients" id="ingredients">
+		</textarea><br/>
+		<p>Instructions: </p>
+		<textarea rows="6" cols="50" name="instructions" id="instructions"></textarea><br/><br/>
+		<input type="hidden" name="source" />
+		<input type="hidden" name="image" />
+		<input type="hidden" name="userRecipe" value="true" />
+		<input type="submit" id='addToFavorites2' value="ADD TO FAVORITES" /><br/><br/>
+	</form>
+	</div>
 </body>
 </html>

@@ -126,6 +126,19 @@ a.middle:hover:before {
 	outline: none;
 }
 
+#addToFavorites2 {
+	background-color: #4aef21;
+	border: none;
+	border-radius: 12px;
+	width: 250px;
+	height: 64px;
+	color: #e9ffe3;
+	font-size: 20px;
+	font-weight: 800;
+	outline: none;
+}
+
+
 #refreshRecipesButton {
 	background-color: #f2ffef;
 	border: none;
@@ -176,6 +189,14 @@ a.middle:hover:before {
 #refreshRecipesButton:hover {
 	/*background-color: #f2fcf0;*/
 	background-color: #e9f7e6;
+}
+
+.createYourOwnForm{
+	margin-top: 5%;
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .container .jumbotron    { border-radius:40px; }
