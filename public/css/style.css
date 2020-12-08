@@ -105,6 +105,14 @@ a.middle:hover:before {
 	margin-right: auto;
 }
 
+.form2 {
+	margin-top: 5%;
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 #addToFavorites {
 	background-color: #4aef21;
 	border: none;
