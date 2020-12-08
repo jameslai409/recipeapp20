@@ -130,6 +130,39 @@ a.middle:hover:before {
 	outline: none;
 }
 
+#add {
+	background-color: #4aef21;
+	border: none;
+	border-radius: 12px;
+	width: 250px;
+	height: 64px;
+	color: #e9ffe3;
+	font-size: 20px;
+	font-weight: 800;
+	margin-right: 30px;
+	outline: none;
+}
+
+#add:hover{
+	background-color: #59de37;
+}
+
+#recipeDropdown{
+	background-color: #f2ffef;
+	border: none;
+	border-radius: 12px;
+	color: #4aef21;
+	font-size: 20px;
+	font-weight: 800;
+	width: 250px;
+	height: 64px;
+	outline: none;
+}
+
+#recipeDropdown:hover{
+	background-color: #e9f7e6;
+}
+
 #addToFavorites:hover {
 	/*background-color: #60eb3d;*/
 	background-color: #59de37;
