@@ -29,7 +29,7 @@
 						recipeHtml = recipeToString(recipeToDisplay);
 						document.getElementById("data").innerHTML = recipeHtml; 
 
-						document.getElementById("recipeDropdown").innerHTML = makeRecipeSelect();
+						document.getElementById("recipe-list").innerHTML = makeRecipeSelect();
 
 						document.getElementById("recipe-list").onchange = function()
 						{
@@ -64,13 +64,12 @@
 
 		function makeRecipeSelect()
 		{
-			var s = "<select name='recipeList' id='recipe-list' size='1'>";
+			var s = "";
 			// s += "<option>" + "No filter" + "</option>";
 			for (k=0; k < recipeObjects.length; k++)
 			{
 				s += "<option>" + recipeObjects[k].name + "</option>";
 			}
-			s+= "</select>";
 			
 			return s;
 		}
@@ -98,7 +97,8 @@
 
 	<form method="POST" action="" class="form2">
 		<input type="button" value="ADD TO SHOPPING LIST" id="add"/>
-		<div id="recipeDropdown"></div>
+		<!-- <div id="recipeDropdown"></div> -->
+		<select name='recipeList' id='recipe-list' size='1'></select>
 	</form>
 	<!-- <form method="POST" action=""> -->
 	<!-- <select name="num_entries" size="1">

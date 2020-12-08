@@ -155,20 +155,17 @@ a.middle:hover:before {
 	background-color: #59de37;
 }
 
-#recipeDropdown{
+#recipe-list {
 	background-color: #f2ffef;
+	font-family: Righteous;
 	border: none;
 	border-radius: 12px;
 	color: #4aef21;
 	font-size: 20px;
 	font-weight: 800;
-	width: 250px;
 	height: 64px;
 	outline: none;
-}
-
-#recipeDropdown:hover{
-	background-color: #e9f7e6;
+	width: 250px;
 }
 
 #addToFavorites:hover {
