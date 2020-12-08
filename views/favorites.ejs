@@ -96,8 +96,9 @@
 		<div><a href="/shoppinglist" class="middle">Shopping List</a></div>
 	</nav>
 
-	<h1>My Favorites</h1>
-
+	<form method="POST" action="">
+		<input type="button" value="ADD TO SHOPPING LIST" id="add"/>
+	</form>
 	<div id="recipeDropdown"></div>
 	<!-- <form method="POST" action=""> -->
 	<!-- <select name="num_entries" size="1">
@@ -108,9 +109,6 @@
 	</select> -->
 	<!-- </form> -->
 	<div id="data">Loading...</div>
-	<form method="POST" action="">
-		<input type="button" value="ADD TO SHOPPING LIST" id="add"/>
-	</form>
 
 <% include partials/recipeObjectFooter %>
 </body>
