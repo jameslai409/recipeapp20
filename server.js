@@ -45,6 +45,8 @@ app.get('/createrecipe', function(req, res) {
     res.render('create_recipe');
 });
 
+//gets all recipes that are in the database and sends them
+//as a response to the AJAX call from the favorites page
 app.get('/favorites/recipes', function(req, res) {
     console.log("in favorites get endpoint");
 
@@ -75,7 +77,7 @@ app.get('/favorites/recipes', function(req, res) {
         }
         catch (e)
         {
-            console.log("Error trying to insert in database");
+            console.log("Error trying to find items in database");
             console.log(e);
             db.close();
         }
@@ -153,7 +155,7 @@ function insertRecipe(recipe) {
                 } 
                 else 
                 {
-                    //only add recipe to database if it doesn't already exist
+                    //only add API recipe to database if it doesn't already exist, add user recipe always
                     if (recipe.userRecipe == "true" || (recipe.userRecipe == "false" && items.length === 0)) {
                         recipes.insertOne(recipe);
                         console.log(recipe["name"] + " added.");
