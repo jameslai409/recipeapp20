@@ -131,6 +131,36 @@ function arrayToUnorderedList(array)
 }
 
 function printIngredients(recipe) {
+	let body = "";
+	
+	body += "<h3 style='text-align: center'>" + recipe["name"] + "</h3>";
+	body += "<br />";
+	let ingredients = recipe["ingredients"];
 
-	return "<ingredients go here>";
+	body += "<div class='container'>";
+	body += "<div class='row justify-content-center'>";
+
+
+	//divide the ingredient list into two
+	//print first half of ingredients as one column
+	body += "<div class='col-3 offset-md-1 ingredients'>"; //start column 1
+	for (let i = 0; i < Math.ceil(ingredients.length / 2); i++) {
+		body += ingredients[i] + "<br />";
+	}
+	body += "</div>"; //end column 1
+
+	//print first half of ingredients as one column
+	body += "<div class='col-3 ingredients'>"; //start column 2
+	for (let i = Math.ceil(ingredients.length / 2); i < ingredients.length; i++) {
+		body += ingredients[i] + "<br />";
+	}
+	body += "</div>"; //end column 2
+
+	body += "</div>"; //end div class row justify-content-center
+	body += "</div>"; //end div container class
+
+	//add some space below each element
+	body += "<br />";
+
+	return body;
 }
