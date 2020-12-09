@@ -26,10 +26,12 @@ app.listen(port, function() {
 
 // set routes
 app.get('/', function(req, res) {
+    console.log(req.sessionID);
     res.render('index');
 });
 
 app.get('/favorites', function(req, res) {
+    console.log(req.sessionID);
     res.render('favorites');
 });
 
@@ -38,6 +40,7 @@ app.get('/shoppinglist', function(req, res) {
 });
 
 app.get('/webrecipe', function(req, res) {
+    console.log(req.sessionID);
     res.render('web_recipe');
 });
 
