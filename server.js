@@ -85,6 +85,36 @@ app.get('/favorites/recipes', function(req, res) {
     }); //end connect
 });
 
+app.get("/shoppinglist/recipes", function(req, res) {
+    MongoClient.connect(url, function(err, db) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        var dbo = db.db("recipedb");
+        var recipes = dbo.collection("recipes");
+        try
+        {
+            recipes.find().toArray(function(err, items) {
+                if (err) {
+                    console.log("Error: " + err);
+                } 
+                else {
+                    res.send(items);            
+                }
+                db.close();   
+            });
+        }
+        catch (e)
+        {
+            console.log("Error trying to find items in database");
+            console.log(e);
+            db.close();
+        }
+
+    }); //end connect
+});
+
 // app.post('/createrecipe', function(req, res) {
 //     //parses the recipe passed through the POST request
 //     var body = "";

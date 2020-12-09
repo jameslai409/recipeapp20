@@ -6,6 +6,39 @@
 	<link rel="stylesheet" href="/css/style.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Righteous" />
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+	<script language="javascript">
+		recipesObjects = new Array();
+
+		window.onload = function() {
+			request = new XMLHttpRequest();
+			request.open("GET", "/shoppinglist/recipes");
+
+			request.onreadystatechange = function() {
+				if (request.readyState == 4 && request.status == 200) {
+					console.log("Start of success");
+					result = request.responseText;
+					recipes = JSON.parse(result);
+					var body = "";
+					for (let r of recipes) {
+						body += printIngredients(r);
+						body += r["name"];
+						body += "<br />";
+					}
+					document.getElementById("data").innerHTML = body;
+					console.log("End of success");
+				}
+				else if (request.readyState == 4 && request.status != 200) {
+					document.getElementById("data").innerHTML = "Something went wrong! Please refresh the page";
+				}
+				else if (request.readyState == 3) {
+					document.getElementById("data").innerHTML = "Loading...";
+				}
+			}
+			request.send();
+		}
+	</script>
+
 </head>
 
 <body>
@@ -23,5 +56,14 @@
 		<input type="button" value="Clear All" /><br/><br/>
 		<input type="button" value="Email" />
 	</form>
+
+	<!-- Place to load recipes in through ajax-->
+	<div id="data">
+
+	</div>
+
+	<!-- Include the recipeObject.js file -->
+	<% include partials/recipeObjectFooter %>
+
 </body>
 </html>

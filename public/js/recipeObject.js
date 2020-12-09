@@ -129,3 +129,8 @@ function arrayToUnorderedList(array)
 
 	return result;
 }
+
+function printIngredients(recipe) {
+
+	return "<ingredients go here>";
+}
