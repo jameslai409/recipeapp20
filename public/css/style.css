@@ -180,7 +180,7 @@ a.middle:hover:before {
 	height: 64px;
 	outline: none;
 	width: 250px;
-	text-align: center;
+	text-align-last: center;
 }
 
 #addToFavorites:hover {
