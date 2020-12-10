@@ -16,17 +16,25 @@
 
 		window.onload = function() {
 			request = new XMLHttpRequest();
-			request.open("GET", "/shoppinglist/recipes");
 
+			//shoppinglist/recipes should return array of recipes
+			request.open("GET", "/shoppinglist/recipes");
+			
 			request.onreadystatechange = function() {
 				if (request.readyState == 4 && request.status == 200) {
 					result = request.responseText;
 					recipes = JSON.parse(result);
 					var body = "";
+
+					//for every recipe, add the HTML to nicely print it into our variable Body
 					for (let r of recipes) {
 						body += printIngredients(r);
 					}
+
+					//display info on page
 					document.getElementById("data").innerHTML = body;
+
+
 				}
 				else if (request.readyState == 4 && request.status != 200) {
 					document.getElementById("data").innerHTML = "Something went wrong! Please refresh the page";
@@ -36,7 +44,15 @@
 				}
 			}
 			request.send();
+
+			//add section to handle email form onclick
+			document.getElementById("emailSendButton").onclick = function() {
+				console.log("ill do this tomorrow :/");
+			}
 		}
+
+
+		
 	</script>
 
 </head>
@@ -49,17 +65,19 @@
 		<div><a href="/shoppinglist" class="middle">Shopping List</a></div>
 	</nav>
 
-	<h1>My Shopping List</h1>
-
-	<p style="color: red">Display all ingredients added to cart</p>
-	<form>
-		<input type="button" value="Clear All" /><br/><br/>
-		<input type="button" value="Email" />
-	</form>
+	<hr />
+	<h1 style="text-align: center; margin-top: 2%; margin-bottom: 2%;">My Shopping List</h1>
+	<hr />
 
 	<!-- Place to load recipes in through ajax-->
 	<div id="data">
 
+	</div>
+
+	<!-- Email form -->
+	<div class="emailForm">
+		Email to Me: <br/><br/><input type="text" name="email" id="email" /><br/><br/>
+		<input type="submit" id="emailSendButton" value="SEND" /><br/><br/>
 	</div>
 
 	<!-- Include the recipeObject.js file -->

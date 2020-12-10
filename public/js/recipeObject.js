@@ -130,6 +130,7 @@ function arrayToUnorderedList(array)
 	return result;
 }
 
+//neatly returns in HTML code: recipe name + ingredients in two columns
 function printIngredients(recipe) {
 	let body = "";
 	
@@ -139,7 +140,6 @@ function printIngredients(recipe) {
 
 	body += "<div class='container'>";
 	body += "<div class='row justify-content-center'>";
-
 
 	//divide the ingredient list into two
 	//print first half of ingredients as one column

@@ -200,3 +200,22 @@ a.middle:hover:before {
 }
 
 .container .jumbotron    { border-radius:40px; }
+
+.emailForm {
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#emailSendButton {
+	background-color: #4aef21;
+	border: none;
+	border-radius: 12px;
+	width: 250px;
+	height: 64px;
+	color: #e9ffe3;
+	font-size: 20px;
+	font-weight: 800;
+	outline: none;
+}

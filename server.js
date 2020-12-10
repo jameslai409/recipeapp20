@@ -115,27 +115,8 @@ app.get("/shoppinglist/recipes", function(req, res) {
     }); //end connect
 });
 
-// app.post('/createrecipe', function(req, res) {
-//     //parses the recipe passed through the POST request
-//     var body = "";
-//     req.on("data", function(data) {
-//         body += data;
-//     });
-//     req.on("end", function() {
-//         var recipe = querystring.parse(body);
-//         insertRecipe(recipe);
-//     });
-
-//     //redirect to same page. gets rid of POST shenanigans (timeouts)
-//     res.redirect('createrecipe');
-//     // res.render("create_recipe")
-//     // alert("Recipe " + recipe["name"] + " added!");
-
-// });
-
 //search for post requests on createrecipe (user submits recipe)
 app.post('/createrecipe', function(req, res) {
-    // console.log(req.body);
     //get request object
     var reqObj = req.body;
 
