@@ -23,6 +23,7 @@ a.middle
 {
     position: relative;
     text-decoration: none;
+    outline: none;
 }
 
 a.middle:before {
