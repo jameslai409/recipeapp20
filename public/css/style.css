@@ -167,6 +167,7 @@ a.middle:hover:before {
 
 #add:hover{
 	background-color: #59de37;
+	cursor: pointer;
 }
 
 #recipe-list {
@@ -183,14 +184,21 @@ a.middle:hover:before {
 	text-align-last: center;
 }
 
+#recipe-list:hover {
+	cursor: pointer;
+	background-color: #e9f7e6;
+}
+
 #addToFavorites:hover {
 	/*background-color: #60eb3d;*/
 	background-color: #59de37;
+	cursor: pointer;
 }
 
 #refreshRecipesButton:hover {
 	/*background-color: #f2fcf0;*/
 	background-color: #e9f7e6;
+	cursor: pointer;
 }
 
 .createYourOwnForm{
@@ -221,3 +229,9 @@ a.middle:hover:before {
 	font-weight: 800;
 	outline: none;
 }
+
+#emailSendButton:hover {
+	background-color: #59de37;
+	cursor: pointer;
+}
+	
