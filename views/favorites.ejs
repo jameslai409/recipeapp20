@@ -34,6 +34,12 @@
 						document.getElementById("recipe-list").onchange = function()
 						{
 							recipeNameIndex = this.selectedIndex;
+							//0th index is 'Jump to Recipe'
+							if (recipeNameIndex == 0)
+							{
+								return;
+							}
+							recipeNameIndex--;
 							// alert(recipeObjects[recipeNameIndex].name);
 							recipeToDisplay = findObjectByKey("name", recipeObjects[recipeNameIndex].name);
 							recipeHtml = recipeToString(recipeToDisplay);
@@ -65,7 +71,7 @@
 		function makeRecipeSelect()
 		{
 			var s = "";
-			// s += "<option>" + "No filter" + "</option>";
+			s += "<option style='text-align: center'>" + "Jump to Recipe" + "</option>";
 			for (k=0; k < recipeObjects.length; k++)
 			{
 				s += "<option style='text-align: center'>" + recipeObjects[k].name + "</option>";
@@ -100,14 +106,7 @@
 		<!-- <div id="recipeDropdown"></div> -->
 		<select name='recipeList' id='recipe-list' size='1'></select>
 	</form>
-	<!-- <form method="POST" action=""> -->
-	<!-- <select name="num_entries" size="1">
-		<option value="10">Show first 10 entries</option>
-		<option value="50">Show first 50 entries</option>
-		<option value="100">Show first 100 entries</option>
-		<option value="all">Show all entries</option>
-	</select> -->
-	<!-- </form> -->
+
 	<div id="data">Loading...</div>
 
 <% include partials/recipeObjectFooter %>
