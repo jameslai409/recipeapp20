@@ -146,13 +146,13 @@ app.post('/webrecipe', function(req, res) {
 
 //search for post requests on webrecipe (user submits recipe)
 app.post('/favorites', function(req, res) {
-    // //get request object
-    // var reqObj = req.body;
+    //get request object
+    var reqObj = req.body;
 
-    // //convert these elements into array (in the form they are sent as
-    // //comma delimitted strings)
-    // var ingredientsArray = toArray(reqObj.ingredients);
-    // reqObj.ingredients = ingredientsArray;
+    //convert these elements into array (in the form they are sent as
+    //comma delimitted strings)
+    var ingredientsArray = toArray(reqObj.ingredients);
+    reqObj.ingredients = ingredientsArray;
    
     insertRecipe(reqObj, "shoppingList");
     console.log("in favorites endpoint after clicking add to shoppinglist");
