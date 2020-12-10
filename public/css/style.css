@@ -155,7 +155,7 @@ a.middle:hover:before {
 	background-color: #4aef21;
 	border: none;
 	border-radius: 12px;
-	width: 250px;
+	min-width: 250px;
 	height: 64px;
 	color: #e9ffe3;
 	font-size: 20px;
