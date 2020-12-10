@@ -27,12 +27,14 @@
 						// recipeObject = createRecipeObject(recipeJson);
 
 						//create hidden form fields within existing form, re-add buttons
-						button1 = '<input type="submit" value="ADD TO SHOPPING LIST" id="add"/>';
-						button2 = '<select name="recipeList" id="recipe-list" size="1"></select>';
-						document.getElementById("favoritesForm").innerHTML = "";
+						// button1 = '<input type="submit" value="ADD TO SHOPPING LIST" id="add"/>';
+						// button2 = '<select name="recipeList" id="recipe-list" size="1"></select>';
+						// document.getElementById("favoritesForm").innerHTML = "";
 						hiddenForm = createHiddenForm(recipeToDisplay);
+						document.getElementById("hiddenForm").innerHTML = hiddenForm;
 						console.log(hiddenForm);
-						document.getElementById("favoritesForm").innerHTML = hiddenForm + button1 + button2;
+						// document.getElementById("favoritesForm").innerHTML = hiddenForm + button1 + button2;
+						// document.getElementById("favoritesForm").innerHTML += wrappedForm;
 
 						recipeHtml = recipeToString(recipeToDisplay);
 						document.getElementById("data").innerHTML = recipeHtml; 
@@ -48,16 +50,18 @@
 								return;
 							}
 							recipeNameIndex--;
-							alert(recipeObjects[recipeNameIndex].name);
+							// alert(recipeObjects[recipeNameIndex].name);
 							recipeToDisplay = findObjectByKey("name", recipeObjects[recipeNameIndex].name);
 
-							button1 = '<input type="submit" value="ADD TO SHOPPING LIST" id="add"/>';
-							button2 = '<select name="recipeList" id="recipe-list" size="1"></select>';
-							document.getElementById("favoritesForm").innerHTML = "";
+							// button1 = '<input type="submit" value="ADD TO SHOPPING LIST" id="add"/>';
+							// button2 = '<select name="recipeList" id="recipe-list" size="1"></select>';
+							document.getElementById("hiddenForm").innerHTML = "";
 							hiddenForm = createHiddenForm(recipeToDisplay);
+							document.getElementById("hiddenForm").innerHTML = hiddenForm;
+							console.log(hiddenForm);
 							// console.log(hiddenForm);
-							document.getElementById("favoritesForm").innerHTML = hiddenForm + button1 + button2;
-							document.getElementById("recipe-list").innerHTML = makeRecipeSelect();
+							// document.getElementById("favoritesForm").innerHTML = hiddenForm + button1 + button2;
+							// document.getElementById("recipe-list").innerHTML = makeRecipeSelect();
 
 							recipeHtml = recipeToString(recipeToDisplay);
 							document.getElementById("data").innerHTML = recipeHtml; 
@@ -123,7 +127,8 @@
 		<div><a href="/shoppinglist" class="middle">Shopping List</a></div>
 	</nav>
 
-	<form method="POST" action="/webrecipe" class="form2" id="favoritesForm" onsubmit="return alertUser()">
+	<form method="POST" action="/favorites" class="form2" id="favoritesForm" onsubmit="return alertUser()">
+		<div id="hiddenForm" style="display: none"></div>
 		<input type="submit" value="ADD TO SHOPPING LIST" id="add"/>
 		<!-- <div id="recipeDropdown"></div> -->
 		<select name='recipeList' id='recipe-list' size='1'></select>

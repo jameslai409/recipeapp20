@@ -156,6 +156,7 @@ app.post('/favorites', function(req, res) {
    
     // insertRecipe(reqObj);
     console.log("in favorites endpoint after clicking add to shoppinglist");
+    console.log(req.body);
 
     res.redirect('favorites');
 });
