@@ -179,7 +179,7 @@ a.middle:hover:before {
 	font-weight: 800;
 	height: 64px;
 	outline: none;
-	min-width: 150px;
+	width: 250px;
 	text-align-last: center;
 }
 
