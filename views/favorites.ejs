@@ -31,7 +31,7 @@
 						button2 = '<select name="recipeList" id="recipe-list" size="1"></select>';
 						document.getElementById("favoritesForm").innerHTML = "";
 						hiddenForm = createHiddenForm(recipeToDisplay);
-						// console.log(hiddenForm);
+						console.log(hiddenForm);
 						document.getElementById("favoritesForm").innerHTML = hiddenForm + button1 + button2;
 
 						recipeHtml = recipeToString(recipeToDisplay);
@@ -48,7 +48,7 @@
 								return;
 							}
 							recipeNameIndex--;
-							// alert(recipeObjects[recipeNameIndex].name);
+							alert(recipeObjects[recipeNameIndex].name);
 							recipeToDisplay = findObjectByKey("name", recipeObjects[recipeNameIndex].name);
 
 							button1 = '<input type="submit" value="ADD TO SHOPPING LIST" id="add"/>';
