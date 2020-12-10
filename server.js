@@ -92,7 +92,7 @@ app.get("/shoppinglist/recipes", function(req, res) {
             return;
         }
         var dbo = db.db("recipedb");
-        var recipes = dbo.collection("recipes");
+        var recipes = dbo.collection("shoppingList");
         try
         {
             recipes.find().toArray(function(err, items) {
@@ -125,7 +125,7 @@ app.post('/createrecipe', function(req, res) {
     var ingredientsArray = toArray(reqObj.ingredients);
     reqObj.ingredients = ingredientsArray;
 
-    insertRecipe(reqObj);
+    insertRecipe(reqObj, "recipes");
     res.redirect('createrecipe');
 });
 
@@ -139,7 +139,7 @@ app.post('/webrecipe', function(req, res) {
     var ingredientsArray = toArray(reqObj.ingredients);
     reqObj.ingredients = ingredientsArray;
    
-    insertRecipe(reqObj);
+    insertRecipe(reqObj, "recipes");
 
     res.redirect('webrecipe');
 });
@@ -154,7 +154,7 @@ app.post('/favorites', function(req, res) {
     // var ingredientsArray = toArray(reqObj.ingredients);
     // reqObj.ingredients = ingredientsArray;
    
-    // insertRecipe(reqObj);
+    insertRecipe(reqObj, "shoppingList");
     console.log("in favorites endpoint after clicking add to shoppinglist");
     console.log(req.body);
 
@@ -162,7 +162,7 @@ app.post('/favorites', function(req, res) {
 });
 
 //MongoDB functions
-function insertRecipe(recipe) {
+function insertRecipe(recipe, collectionName) {
     MongoClient.connect(url, function(err, db) {
         if (err) 
         {
@@ -170,7 +170,7 @@ function insertRecipe(recipe) {
             return;
         }
         var dbo = db.db("recipedb");
-        var recipes = dbo.collection("recipes");
+        var recipes = dbo.collection(collectionName);
 
         try
         {
