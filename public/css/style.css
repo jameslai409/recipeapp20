@@ -181,8 +181,6 @@ a.middle:hover:before {
 	outline: none;
 	width: 250px;
 	text-align: center;
-	padding-left: auto;
-	padding-right: auto;
 }
 
 #addToFavorites:hover {
