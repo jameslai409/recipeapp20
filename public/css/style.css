@@ -190,13 +190,16 @@ a.middle:hover:before {
 }
 
 #addToFavorites:hover {
-	/*background-color: #60eb3d;*/
+	background-color: #59de37;
+	cursor: pointer;
+}
+
+#addToFavorites2:hover {
 	background-color: #59de37;
 	cursor: pointer;
 }
 
 #refreshRecipesButton:hover {
-	/*background-color: #f2fcf0;*/
 	background-color: #e9f7e6;
 	cursor: pointer;
 }
