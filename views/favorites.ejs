@@ -26,6 +26,14 @@
 						recipeToDisplay = recipes[0];
 						// recipeObject = createRecipeObject(recipeJson);
 
+						//create hidden form fields within existing form, re-add buttons
+						button1 = '<input type="submit" value="ADD TO SHOPPING LIST" id="add"/>';
+						button2 = '<select name="recipeList" id="recipe-list" size="1"></select>';
+						document.getElementById("favoritesForm").innerHTML = "";
+						hiddenForm = createHiddenForm(recipeToDisplay);
+						// console.log(hiddenForm);
+						document.getElementById("favoritesForm").innerHTML = hiddenForm + button1 + button2;
+
 						recipeHtml = recipeToString(recipeToDisplay);
 						document.getElementById("data").innerHTML = recipeHtml; 
 
@@ -42,6 +50,15 @@
 							recipeNameIndex--;
 							// alert(recipeObjects[recipeNameIndex].name);
 							recipeToDisplay = findObjectByKey("name", recipeObjects[recipeNameIndex].name);
+
+							button1 = '<input type="submit" value="ADD TO SHOPPING LIST" id="add"/>';
+							button2 = '<select name="recipeList" id="recipe-list" size="1"></select>';
+							document.getElementById("favoritesForm").innerHTML = "";
+							hiddenForm = createHiddenForm(recipeToDisplay);
+							// console.log(hiddenForm);
+							document.getElementById("favoritesForm").innerHTML = hiddenForm + button1 + button2;
+							document.getElementById("recipe-list").innerHTML = makeRecipeSelect();
+
 							recipeHtml = recipeToString(recipeToDisplay);
 							document.getElementById("data").innerHTML = recipeHtml; 
 							// alert("Recipe saved!");
@@ -90,6 +107,11 @@
 		    return null;
 		}
 
+		function alertUser()
+		{
+			alert("Recipe added to shopping list!");
+		}
+
 	</script>
 </head>
 
@@ -101,8 +123,8 @@
 		<div><a href="/shoppinglist" class="middle">Shopping List</a></div>
 	</nav>
 
-	<form method="POST" action="" class="form2">
-		<input type="button" value="ADD TO SHOPPING LIST" id="add"/>
+	<form method="POST" action="/webrecipe" class="form2" id="favoritesForm" onsubmit="return alertUser()">
+		<input type="submit" value="ADD TO SHOPPING LIST" id="add"/>
 		<!-- <div id="recipeDropdown"></div> -->
 		<select name='recipeList' id='recipe-list' size='1'></select>
 	</form>

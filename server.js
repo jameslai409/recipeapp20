@@ -144,6 +144,22 @@ app.post('/webrecipe', function(req, res) {
     res.redirect('webrecipe');
 });
 
+//search for post requests on webrecipe (user submits recipe)
+app.post('/favorites', function(req, res) {
+    // //get request object
+    // var reqObj = req.body;
+
+    // //convert these elements into array (in the form they are sent as
+    // //comma delimitted strings)
+    // var ingredientsArray = toArray(reqObj.ingredients);
+    // reqObj.ingredients = ingredientsArray;
+   
+    // insertRecipe(reqObj);
+    console.log("in favorites endpoint after clicking add to shoppinglist");
+
+    res.redirect('favorites');
+});
+
 //MongoDB functions
 function insertRecipe(recipe) {
     MongoClient.connect(url, function(err, db) {
