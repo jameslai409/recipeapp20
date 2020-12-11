@@ -260,7 +260,7 @@ a.middle:hover:before {
 }
 
 .xIcon {
-  content: '\00a0 \00a0 x'; 
+  /*content: '\00a0 \00a0 x'; */
   color: #000;
   font-size: 20px;
   font-weight: 100;
