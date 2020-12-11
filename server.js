@@ -161,7 +161,7 @@ app.post('/favorites', function(req, res) {
     res.redirect('favorites');
 });
 
-//search for post requests on webrecipe (user submits recipe)
+//endpoint from favorites page, user removes recipe from their favorites
 app.post('/remove', function(req, res) {
     //get request object
     var reqObj = req.body;
@@ -180,7 +180,7 @@ app.post('/remove', function(req, res) {
                 if (err) {
                     console.log("Error: " + err);
                 } 
-                console.log(reqObj.name + " removed from database"); 
+                console.log(reqObj.name + " removed from recipe collection"); 
             });
             db.close(); 
         }
@@ -194,6 +194,41 @@ app.post('/remove', function(req, res) {
     }); //end connect
 
     res.redirect('favorites');
+});
+
+//endpoint from shopping list page, user removes recipe from their shopping list
+app.post('/removeShoppingList', function(req, res) {
+    //get request object
+    var reqObj = req.body;
+
+    MongoClient.connect(url, function(err, db) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        var dbo = db.db("recipedb");
+        var recipes = dbo.collection("shoppingList");
+        try
+        {
+            console.log(reqObj.name);
+            recipes.deleteOne({ name: reqObj.name }, function(err, items) {
+                if (err) {
+                    console.log("Error: " + err);
+                } 
+                console.log(reqObj.name + " removed from shopping list collection"); 
+            });
+            db.close(); 
+        }
+        catch (e)
+        {
+            console.log("Error trying to find items in database");
+            console.log(e);
+            db.close();
+        }
+
+    }); //end connect
+
+    res.redirect('shoppinglist');
 });
 
 //MongoDB functions
