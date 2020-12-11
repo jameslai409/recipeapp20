@@ -270,6 +270,7 @@ a.middle:hover:before {
   margin-left: 20px;
   position: absolute;
   margin-top: 3.5px;
+  outline: none;
 }
 
 .xIcon:hover {
