@@ -183,6 +183,7 @@ a.middle:hover:before {
 	outline: none;
 	margin-left: 15px;
 	float: right;
+	margin-right: 30px;
 }
 
 #remove:hover{
