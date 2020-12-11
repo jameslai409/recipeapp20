@@ -77,7 +77,7 @@ function recipeToStringWithRemoveButton(recipe)
 {
 	html = "<div class='recipeDisplayContainer'>";
 	nameString = "<h1 class='recipeName'>" + recipe.name + "</h1>";
-	removeButton = '<input type="submit" value="REMOVE RECIPE" id="add"/>';
+	removeButton = '<input type="submit" value="REMOVE RECIPE" id="remove"/>';
 	html2 = "<div class='flex-container'>";
 	imageString = recipe.userRecipe === "true" ? "" : "<img class='recipeImg' src='" + recipe.image + "'/>";
 	html3 = "<div class='body-container'>";
