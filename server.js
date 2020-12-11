@@ -144,7 +144,7 @@ app.post('/webrecipe', function(req, res) {
     res.redirect('webrecipe');
 });
 
-//search for post requests on webrecipe (user submits recipe)
+//search for post requests on favorites (user adds recipe to shopping list)
 app.post('/favorites', function(req, res) {
     //get request object
     var reqObj = req.body;
@@ -155,8 +155,42 @@ app.post('/favorites', function(req, res) {
     reqObj.ingredients = ingredientsArray;
    
     insertRecipe(reqObj, "shoppingList");
-    console.log("in favorites endpoint after clicking add to shoppinglist");
+    console.log("Added " + reqObj.name + " to shopping list");
     console.log(req.body);
+
+    res.redirect('favorites');
+});
+
+//search for post requests on webrecipe (user submits recipe)
+app.post('remove/favorites', function(req, res) {
+    //get request object
+    var reqObj = req.body;
+
+    MongoClient.connect(url, function(err, db) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        var dbo = db.db("recipedb");
+        var recipes = dbo.collection("recipes");
+        try
+        {
+            recipes.deleteOne({ name: reqObj.name }, function(err, items) {
+                if (err) {
+                    console.log("Error: " + err);
+                } 
+                console.log(reqObj.name + " removed from database"); 
+            });
+            db.close(); 
+        }
+        catch (e)
+        {
+            console.log("Error trying to find items in database");
+            console.log(e);
+            db.close();
+        }
+
+    }); //end connect
 
     res.redirect('favorites');
 });
