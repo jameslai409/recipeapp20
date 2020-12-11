@@ -175,6 +175,7 @@ app.post('/remove', function(req, res) {
         var recipes = dbo.collection("recipes");
         try
         {
+            console.log(reqObj.name);
             recipes.deleteOne({ name: reqObj.name }, function(err, items) {
                 if (err) {
                     console.log("Error: " + err);
