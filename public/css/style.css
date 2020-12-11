@@ -182,7 +182,8 @@ a.middle:hover:before {
 	font-weight: 800;
 	margin-right: 30px;
 	outline: none;
-	margin-left: 150px;
+	margin-left: 300px;
+	margin-bottom: 20px;
 }
 
 #recipe-list {
