@@ -162,7 +162,7 @@ app.post('/favorites', function(req, res) {
 });
 
 //search for post requests on webrecipe (user submits recipe)
-app.post('remove/favorites', function(req, res) {
+app.post('favorites/remove', function(req, res) {
     //get request object
     var reqObj = req.body;
 
