@@ -258,4 +258,11 @@ a.middle:hover:before {
 	background-color: #59de37;
 	cursor: pointer;
 }
+
+.recipeNameShoppingList::after {
+  content: 'x'; 
+  color: #fff;
+  font-weight: 300;
+  font-family: Arial, sans-serif;
+}
 	
