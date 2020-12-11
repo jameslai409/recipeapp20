@@ -150,7 +150,8 @@ function arrayToUnorderedList(array)
 function printIngredients(recipe) {
 	let body = "";
 	
-	body += "<h3 style='text-align: center'>" + recipe["name"] + "<form><input type='submit' class='xIcon' value='x'></form></h3>";
+	body+="<form>"
+	body += "<h3 style='text-align: center'>" + recipe["name"] + "<input type='submit' class='xIcon' value='x'></h3>";
 	body += "<br />";
 	let ingredients = recipe["ingredients"];
 
@@ -176,7 +177,7 @@ function printIngredients(recipe) {
 	body += "</div>"; //end div container class
 
 	//add some space below each element
-	body += "<br />";
+	body += "<br /></form>";
 
 	return body;
 }
