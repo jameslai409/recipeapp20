@@ -83,7 +83,7 @@ function recipeToStringWithRemoveButton(recipe)
 	html3 = "<div class='body-container'>";
 	instructionsString = "<div class='instructions'>" + recipe.instructions + "</div>";
 	ingredientsString = "<div class='ingredients'>" + arrayToUnorderedList(recipe.ingredients) + "</div>";
-	html += nameString + removeButton + html2 + imageString + html3 + instructionsString + ingredientsString;
+	html += nameString + html2 + imageString + html3 + instructionsString + ingredientsString;
 	html += "</div></div>";
 	return html;
 }
