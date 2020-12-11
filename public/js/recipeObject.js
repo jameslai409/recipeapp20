@@ -150,7 +150,7 @@ function arrayToUnorderedList(array)
 function printIngredients(recipe) {
 	let body = "";
 	
-	body += "<h3 class='recipeNameShoppingList' style='text-align: center'>" + recipe["name"] + "</h3>";
+	body += "<h3 style='text-align: center'>" + recipe["name"] + "<form><input type='submit' class='xIcon' value='x'></form></h3>";
 	body += "<br />";
 	let ingredients = recipe["ingredients"];
 
