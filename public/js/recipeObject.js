@@ -73,6 +73,21 @@ function recipeToString(recipe)
 	return html;
 }
 
+function recipeToStringWithRemoveButton(recipe)
+{
+	html = "<div class='recipeDisplayContainer'>";
+	nameString = "<h1 class='recipeName'>" + recipe.name + "</h1>";
+	removeButton = '<input type="submit" value="REMOVE RECIPE" id="add"/>';
+	html2 = "<div class='flex-container'>";
+	imageString = recipe.userRecipe === "true" ? "" : "<img class='recipeImg' src='" + recipe.image + "'/>";
+	html3 = "<div class='body-container'>";
+	instructionsString = "<div class='instructions'>" + recipe.instructions + "</div>";
+	ingredientsString = "<div class='ingredients'>" + arrayToUnorderedList(recipe.ingredients) + "</div>";
+	html += nameString + removeButton + html2 + imageString + html3 + instructionsString + ingredientsString;
+	html += "</div></div>";
+	return html;
+}
+
 //used to send form data to backend on web_recipe.ejs page when user adds recipe to favorites
 function createHiddenForm(recipe)
 {

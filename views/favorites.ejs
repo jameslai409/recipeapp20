@@ -36,7 +36,7 @@
 						// document.getElementById("favoritesForm").innerHTML = hiddenForm + button1 + button2;
 						// document.getElementById("favoritesForm").innerHTML += wrappedForm;
 
-						recipeHtml = recipeToString(recipeToDisplay);
+						recipeHtml = recipeToStringWithRemoveButton(recipeToDisplay);
 						document.getElementById("data").innerHTML = recipeHtml; 
 
 						document.getElementById("recipe-list").innerHTML = makeRecipeSelect();
@@ -63,7 +63,7 @@
 							// document.getElementById("favoritesForm").innerHTML = hiddenForm + button1 + button2;
 							// document.getElementById("recipe-list").innerHTML = makeRecipeSelect();
 
-							recipeHtml = recipeToString(recipeToDisplay);
+							recipeHtml = recipeToStringWithRemoveButton(recipeToDisplay);
 							document.getElementById("data").innerHTML = recipeHtml; 
 							// alert("Recipe saved!");
 							// getRecipes();
