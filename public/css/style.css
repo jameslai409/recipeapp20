@@ -264,8 +264,16 @@ a.middle:hover:before {
   font-size: 20px;
   font-weight: 100;
   font-family: Arial, sans-serif;
-  opacity: 0.4;
+  opacity: 0.5;
   border: none;
   background-color: #d5ffca;
+  margin-left: 20px;
+  position: absolute;
+  margin-top: 3px;
+}
+
+.xIcon:hover {
+	cursor: pointer;
+	color: #52cc33;
 }
 	
