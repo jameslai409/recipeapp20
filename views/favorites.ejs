@@ -92,7 +92,7 @@
 		function makeRecipeSelect()
 		{
 			var s = "";
-			s += "<option style='text-align: center'>" + "Jump to Recipe" + "</option>";
+			s += "<option style='text-align: center' selected disabled hidden>" + "Jump to Recipe" + "</option>";
 			for (k=0; k < recipeObjects.length; k++)
 			{
 				s += "<option style='text-align: center'>" + recipeObjects[k].name + "</option>";
