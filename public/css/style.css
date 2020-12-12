@@ -304,11 +304,13 @@ a.middle:hover:before {
 	  text-decoration: none;
 	  font-size: 17px;
 	  display: block;
+	  font-weight: 400;
+	  font-family: Righteous;
 	}
 
 	/* Style the hamburger menu */
 	.mobile-nav a.icon {
-	  background: white;
+	  background: black;
 	  display: block;
 	  position: absolute;
 	  right: 0;
