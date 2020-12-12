@@ -282,7 +282,7 @@ a.middle:hover:before {
 
 /* Style the navigation menu */
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
 	.no-mobile {display: none ;}
 
 	.mobile-nav {
@@ -310,7 +310,7 @@ a.middle:hover:before {
 
 	/* Style the hamburger menu */
 	.mobile-nav a.icon {
-	  background: black;
+	  background: #d5ffca;
 	  display: block;
 	  position: absolute;
 	  right: 0;
@@ -319,13 +319,13 @@ a.middle:hover:before {
 
 	/* Add a grey background color on mouse-over */
 	.mobile-nav a:hover {
-	  background-color: #d5ffca;
+	  background-color: #52cc33;
 	  color: black;
 	}
 
 	/* Style the active link (or home/logo) */
 	.active {
-	  background-color: #4CAF50;
+	  background-color: #d5ffca;
 	  color: white;
 	}
 }
