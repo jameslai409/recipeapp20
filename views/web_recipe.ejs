@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="/css/style.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Righteous" />
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
 	<script language="javascript">
 		cuisineOptions = new Array();
 
@@ -72,12 +73,23 @@
 </head>
 
 <body onload="getRecipes()">
-	<nav>
+	<nav class="no-mobile">
 		<div><a href="/webrecipe" class="middle" style="color: #4aef21">Browse</a></div>
 		<div><a href="/createrecipe" class="middle">Add Your Own</a></div>
 		<div><a href="/favorites" class="middle">My Favorites</a></div>
 		<div><a href="/shoppinglist" class="middle">Shopping List</a></div>
 	</nav>
+		<div class="mobile-nav">
+		<a href="/webrecipe" class="active">Browse</a>
+		<div id="myLinks">
+			<a href="/createrecipe">Add Your Own</a>
+			<a href="/favorites">My Favorites</a>
+			<a href="/shoppinglist">Shopping List</a>
+		</div>
+		<a href="javascript:void(0);" class="icon" onclick="navFun()">
+    		<i class="fa fa-bars"></i>
+  		</a>
+	</div>
 
 	<form class="form1" method="POST" action="/webrecipe" id="web_recipe_form" onsubmit="return alertUser()">
 

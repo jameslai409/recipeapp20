@@ -3,7 +3,7 @@ body {
 	background-color: #d5ffca;
 	font-family: 'Montserrat', sans-serif;
 }
-nav {
+.no-mobile {
 	font-size: 24px;
 	font-weight: 400;
 	text-align: center;
@@ -13,6 +13,8 @@ nav {
 	justify-content: space-between;
 	font-family: Righteous;
 }
+
+.mobile-nav {display: none;}
 
 a {
 	text-decoration: none;
@@ -276,5 +278,53 @@ a.middle:hover:before {
 .xIcon:hover {
 	cursor: pointer;
 	color: #52cc33;
+}
+
+/* Style the navigation menu */
+
+@media (max-width: 1000px) {
+	.no-mobile {display: none ;}
+
+	.mobile-nav {
+	  display: block;
+	  overflow: hidden;
+	  background-color: #d5ffca;
+	  position: relative;
+	}
+
+	/* Hide the links inside the navigation menu (except for logo/home) */
+	.mobile-nav #myLinks {
+	  display: none;
+	}
+
+	/* Style navigation menu links */
+	.mobile-nav a {
+	  color: black;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	  font-size: 17px;
+	  display: block;
+	}
+
+	/* Style the hamburger menu */
+	.mobile-nav a.icon {
+	  background: white;
+	  display: block;
+	  position: absolute;
+	  right: 0;
+	  top: 0;
+	}
+
+	/* Add a grey background color on mouse-over */
+	.mobile-nav a:hover {
+	  background-color: #d5ffca;
+	  color: black;
+	}
+
+	/* Style the active link (or home/logo) */
+	.active {
+	  background-color: #4CAF50;
+	  color: white;
+	}
 }
 	
