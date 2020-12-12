@@ -10,10 +10,20 @@
 	<link rel="stylesheet" href="/css/style.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Righteous" />
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
 
 	<script language="javascript">
 		recipesObjects = new Array();
+
+		function navFun() {
+  			var x = document.getElementById("myLinks");
+ 			if (x.style.display === "block") {
+    			x.style.display = "none";
+    		} else {
+    			x.style.display = "block";
+ 			}
+		}
 
 		window.onload = function() {
 			request = new XMLHttpRequest();
@@ -63,6 +73,18 @@
 		<div><a href="/favorites" class="middle" style="color: black">My Favorites</a></div>
 		<div><a href="/shoppinglist" class="middle" style="color: #4aef21">Shopping List</a></div>
 	</nav>
+
+	<div class="mobile-nav">
+		<a href="/shoppinglist" class="active">Shopping List</a>
+		<div id="myLinks">
+			<a href="/webrecipe">Browse</a>
+			<a href="/createrecipe">Add Your Own</a>
+			<a href="/favorites">My Favorites</a>
+		</div>
+		<a href="javascript:void(0);" class="icon" onclick="navFun()">
+    		<i class="fa fa-bars"></i>
+  		</a>
+	</div>
 
 	<h1 style="text-align: center; margin-top: 2%; margin-bottom: 2%;">My Shopping List</h1>
 	<hr style="width: 400px" />

@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="/css/style.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Righteous" />
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
 
 	<script language="javascript">
@@ -111,6 +112,15 @@
 			alert("Recipe removed from favorites.");
 		}
 
+		function navFun() {
+  			var x = document.getElementById("myLinks");
+ 			if (x.style.display === "block") {
+    			x.style.display = "none";
+    		} else {
+    			x.style.display = "block";
+ 			}
+		}
+
 	</script>
 </head>
 
@@ -121,6 +131,19 @@
 		<div><a href="/favorites" class="middle" style="color: #4aef21">My Favorites</a></div>
 		<div><a href="/shoppinglist" class="middle">Shopping List</a></div>
 	</nav>
+
+	<div class="mobile-nav">
+		<a href="/favorites" class="active">My Favorites</a>
+		<div id="myLinks">
+			<a href="/webrecipe">Browse</a>
+			<a href="/createrecipe">Add Your Own</a>
+			<a href="/shoppinglist">Shopping List</a>
+		</div>
+		<a href="javascript:void(0);" class="icon" onclick="navFun()">
+    		<i class="fa fa-bars"></i>
+  		</a>
+	</div>
+
 
 	<form method="POST" action="/favorites" class="form2" id="favoritesForm" onsubmit="return alertUser()">
 		<div id="hiddenForm" style="display: none"></div>
