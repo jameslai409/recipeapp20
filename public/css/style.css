@@ -328,5 +328,9 @@ a.middle:hover:before {
 	  background-color: #d5ffca;
 	  color: white;
 	}
+
+	.flex-container {
+		display: block;
+	}
 }
 	
