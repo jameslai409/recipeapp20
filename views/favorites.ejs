@@ -10,7 +10,6 @@
 		recipeObjects = new Array();
 
 		window.onload = function() {
-				// alert("click");
 				request = new XMLHttpRequest();
 				request.open("GET", "/favorites/recipes");
 	 
@@ -18,24 +17,19 @@
 				request.onreadystatechange = function() {
 					// wait for done + success
 					if (request.readyState == 4 && request.status == 200) {
-						// alert("success");
+
 						result = request.responseText;
-						// alert(result);
 						recipes = JSON.parse(result);
 						recipeObjects = recipes;
+						//use first recipe in response as one to display upon load of page
 						recipeToDisplay = recipes[0];
-						// recipeObject = createRecipeObject(recipeJson);
 
-						//create hidden form fields within existing form, re-add buttons
-						// button1 = '<input type="submit" value="ADD TO SHOPPING LIST" id="add"/>';
-						// button2 = '<select name="recipeList" id="recipe-list" size="1"></select>';
-						// document.getElementById("favoritesForm").innerHTML = "";
+						//create hidden form of recipe object in case user adds it to shopping list;
+						//the endpoint will recipe the full object to insert into database
 						hiddenForm = createHiddenForm(recipeToDisplay);
 						document.getElementById("hiddenForm").innerHTML = hiddenForm;
-						console.log(hiddenForm);
-						// document.getElementById("favoritesForm").innerHTML = hiddenForm + button1 + button2;
-						// document.getElementById("favoritesForm").innerHTML += wrappedForm;
 
+						//display recipe on the page
 						recipeHtml = recipeToStringWithRemoveButton(recipeToDisplay);
 						document.getElementById("data").innerHTML = recipeHtml; 
 
@@ -49,28 +43,21 @@
 							{
 								return;
 							}
+							//'Jump to Recipe' is 0th index, subtract 1 to get index of recipe in
+							//recipe array
 							recipeNameIndex--;
-							// alert(recipeObjects[recipeNameIndex].name);
 							recipeToDisplay = findObjectByKey("name", recipeObjects[recipeNameIndex].name);
 
-							// button1 = '<input type="submit" value="ADD TO SHOPPING LIST" id="add"/>';
-							// button2 = '<select name="recipeList" id="recipe-list" size="1"></select>';
+							//delete old hidden form, create new one with new recipe chosen from dropdown
 							document.getElementById("hiddenForm").innerHTML = "";
 							hiddenForm = createHiddenForm(recipeToDisplay);
 							document.getElementById("hiddenForm").innerHTML = hiddenForm;
-							console.log(hiddenForm);
-							// console.log(hiddenForm);
-							// document.getElementById("favoritesForm").innerHTML = hiddenForm + button1 + button2;
-							// document.getElementById("recipe-list").innerHTML = makeRecipeSelect();
 
+							//display recipe on the page
 							recipeHtml = recipeToStringWithRemoveButton(recipeToDisplay);
 							document.getElementById("data").innerHTML = recipeHtml; 
-							// alert("Recipe saved!");
-							// getRecipes();
 						}
 
-						// recipeJson = recipe["meals"][0];
-						// recipeObject = createRecipeObject(recipeJson);
 					}
 					else if (request.readyState == 4 && request.status != 200) {
 
@@ -101,6 +88,7 @@
 			return s;
 		}
 
+		//returns full recipe object from array based on its name in the dropdown list
 		function findObjectByKey(key, value) {
 		    for (var i = 0; i < recipeObjects.length; i++) 
 		    {
@@ -135,7 +123,6 @@
 	<form method="POST" action="/favorites" class="form2" id="favoritesForm" onsubmit="return alertUser()">
 		<div id="hiddenForm" style="display: none"></div>
 		<input type="submit" value="ADD TO SHOPPING LIST" id="add"/>
-		<!-- <div id="recipeDropdown"></div> -->
 		<select name='recipeList' id='recipe-list' size='1'></select>
 	</form>
 

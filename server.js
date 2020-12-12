@@ -45,7 +45,7 @@ app.get('/createrecipe', function(req, res) {
     res.render('create_recipe');
 });
 
-//gets all recipes that are in the database and sends them
+//gets all recipes that are in the 'recipes' collection and sends them
 //as a response to the AJAX call from the favorites page
 app.get('/favorites/recipes', function(req, res) {
     console.log("in favorites get endpoint");
@@ -85,6 +85,8 @@ app.get('/favorites/recipes', function(req, res) {
     }); //end connect
 });
 
+//gets all recipes that are in the 'shoppingList' collection and sends them
+//as a response to the AJAX call from the shopping list page
 app.get("/shoppinglist/recipes", function(req, res) {
     MongoClient.connect(url, function(err, db) {
         if (err) {
@@ -115,7 +117,8 @@ app.get("/shoppinglist/recipes", function(req, res) {
     }); //end connect
 });
 
-//search for post requests on createrecipe (user submits recipe)
+//search for post requests on createrecipe
+//user saves recipe to their favorites
 app.post('/createrecipe', function(req, res) {
     //get request object
     var reqObj = req.body;
@@ -129,7 +132,8 @@ app.post('/createrecipe', function(req, res) {
     res.redirect('createrecipe');
 });
 
-//search for post requests on webrecipe (user submits recipe)
+//search for post requests on webrecipe
+//user saves recipe to their favorites
 app.post('/webrecipe', function(req, res) {
     //get request object
     var reqObj = req.body;
@@ -144,7 +148,8 @@ app.post('/webrecipe', function(req, res) {
     res.redirect('webrecipe');
 });
 
-//search for post requests on favorites (user adds recipe to shopping list)
+//search for post requests on favorites 
+//user adds recipe to shopping list
 app.post('/favorites', function(req, res) {
     //get request object
     var reqObj = req.body;
@@ -277,47 +282,8 @@ function insertRecipe(recipe, collectionName) {
     return;
 }
 
-// function getAllRecipes() {
-//     MongoClient.connect(url, function(err, db) {
-//         if (err) 
-//         {
-//             console.log(err);
-//             return;
-//         }
-
-//         var dbo = db.db("recipedb");
-//         var recipes = dbo.collection("recipes");
-
-//         try
-//         {
-//             console.log("in getAllRecipes()");
-//             recipes.find().toArray(function(err, items) {
-//               if (err) 
-//               {
-//                 console.log("Error: " + err);
-//                 db.close();
-//               } 
-//               else 
-//               {
-//                 db.close();
-//                 return items;         
-//               }   
-//             });
-//         }
-//         catch (e)
-//         {
-//             console.log("Error trying to insert in database");
-//             console.log(e);
-//             db.close();
-//         }
-
-//     }); //end connect
-//     return;
-// }
-
 //convert strings to arrays for storage in Mongo
 function toArray(commaDelimitedString)
 {
-    // console.log("in toArray");
     return commaDelimitedString.split(",");
 }

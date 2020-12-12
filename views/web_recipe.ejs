@@ -32,18 +32,18 @@
 					recipeJson = recipe["meals"][0];
 					recipeObject = createRecipeObject(recipeJson);
 
+					//create hidden form of recipe object in case user adds it to their favorites;
+					//the endpoint will recipe the full object to insert into database
 					button1 = "<input type='submit' value='ADD TO FAVORITES' id='addToFavorites'/>";
 					button2 = "<input type='button' value='NEXT RECIPE' id='refreshRecipesButton' onclick='getRecipes()'/>";
 					document.getElementById("web_recipe_form").innerHTML = "";
 					hiddenForm = createHiddenForm(recipeObject);
-					console.log(hiddenForm);
 					document.getElementById("web_recipe_form").innerHTML = hiddenForm + button1 + button2;
 
+					//display recipe on the page
 					recipeHtml = recipeToString(recipeObject);
 					document.getElementById("data").innerHTML = recipeHtml; 
 
-					// searchButton = document.getElementById("cuisineDropdownDiv").innerHTML;
-					// document.getElementById("cuisineDropdownDiv").innerHTML = makeCuisineSelect() + "&nbsp" +makeFilterSearchButton();
 				}
 				else if (request.readyState == 4 && request.status != 200) {
 
@@ -60,36 +60,12 @@
 			//fire off the HTTP request
 			request.send();
 			console.log("4 - Request sent");
-
-			// document.getElementById("addToFavorites").onclick = function()
-			// {
-			// 	alert("Recipe saved!");
-			// 	// getRecipes();
-			// }
 		}
 
 		function alertUser()
 		{
 			alert("Recipe saved!");
 		}
-
-		// function makeCuisineSelect()
-		// {
-		// 	var s = "<select name='cuisineList' id='cuisine-list' size='1'>";
-		// 	s += "<option>" + "No filter" + "</option>";
-		// 	for (k=0; k < cuisineOptions.length; k++)
-		// 	{
-		// 		s += "<option>" + cuisineOptions[k] + "</option>";
-		// 	}
-		// 	s+= "</select>";
-			
-		// 	return s;
-		// }
-
-		// function makeFilterSearchButton()
-		// {
-		// 	return "<input type='button' value='Search' />";
-		// }
 
 	</script>
 
@@ -104,10 +80,7 @@
 	</nav>
 
 	<form class="form1" method="POST" action="/webrecipe" id="web_recipe_form" onsubmit="return alertUser()">
-		<!-- <input type="submit" value="ADD TO FAVORITES" id="addToFavorites"/> -->
-		<!-- <button type="submit" id="addToFavorites">ADD TO FAVORITES</button>
-		<button type="button" onclick="getRecipes()" id="refreshRecipesButton">NEXT RECIPE</button> -->
-		<!-- <input type="button" value="NEXT RECIPE" id="refreshRecipesButton" onclick="getRecipes()"/> -->
+
 	</form>
 	<div id="data">Loading...</div>
 
