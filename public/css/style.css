@@ -339,21 +339,18 @@ a.middle:hover:before {
 		margin-left: auto;
 		margin-right: auto;
 		padding-left: none;
-		height: 40%;
-	}
-
-	.form1 {
-		display: block;
-	}
-
-	#addToFavorites {
-		width: 60%;
 		height: auto;
 	}
 
-	#refreshRecipesButton {
-		width: 60%;
+	#add {
+		min-width: 60%;
+		margin-right: none;
 		height: auto;
+	}
+
+	#recipe-list {
+		height: auto;
+		width: 60%;
 	}
 }
 	
