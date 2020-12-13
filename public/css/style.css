@@ -332,5 +332,13 @@ a.middle:hover:before {
 	.flex-container {
 		display: block;
 	}
+
+	.recipeImg {
+		width: 60%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 }
 	
