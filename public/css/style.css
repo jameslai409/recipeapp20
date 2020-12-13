@@ -302,7 +302,7 @@ a.middle:hover:before {
 	  color: black;
 	  padding: 14px 16px;
 	  text-decoration: none;
-	  font-size: 24px;
+	  font-size: 5vw;
 	  display: block;
 	  font-weight: 400;
 	  font-family: Righteous;
@@ -331,6 +331,106 @@ a.middle:hover:before {
 
 	.flex-container {
 		display: block;
+	}
+
+	.recipeImg {
+		width: 90%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 0px;
+		height: auto;
+		margin-bottom: 5%;
+		padding-top: 3%;
+	}
+
+	#add {
+		width: 60%;
+		margin-right: 0px;
+		height: 12vw;
+		font-size: 4.5vw;
+	}
+
+	#recipe-list {
+		width: 60%;
+		height: 12vw;
+		font-size: 4.5vw;
+		margin-top: 2%;
+	}
+
+	.instructions {
+		font-size: 3.5vw;
+	}
+
+	.ingredients {
+		font-size: 3.5vw;
+	}
+
+	.recipeDisplayContainer {
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+
+	.recipeName {
+		font-size: 5vw;
+		text-align: center;
+		display: block;
+		padding-left: 0px;
+	}
+
+	#remove {
+		font-size: 4.5vw;
+		height: 10vw;
+		width: 50%;
+		margin-top: 3%;
+	}
+
+	#addToFavorites {
+		width: 60%;
+		height: 12vw;
+		font-size: 4.5vw;
+		margin-right: 0px;
+	}
+
+	#addToFavorites2 {
+		width: 60%;
+		height: 12vw;
+		font-size: 4.5vw;
+	}
+
+	#refreshRecipesButton {
+		font-size: 4.5vw;
+		width: 60%;
+		height: 12vw;
+		margin-top: 2%;
+	}
+
+	.createYourOwnForm{
+		font-size: 4vw;
+	}
+
+	.h1_shopping {
+		font-size: 8vw;
+	}
+
+	.shopping_name {
+		font-size: 5vw;
+	}
+
+	.col-3 {
+		flex: 0 0 auto;
+		max-width: 100%;
+	}
+
+	.emailForm {
+		font-size: 4vw;
+
+	}
+
+	#emailSendButton {
+		width: 50%;
+		height: 12vw;
+		font-size: 4.5vw;
 	}
 }
 	

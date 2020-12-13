@@ -153,7 +153,7 @@ function printIngredients(recipe) {
 	
 	body += "<form method='POST' action='/removeShoppingList' id='removeRecipeForm''>";
 	body += "<input type='hidden' name='name' value='" + recipe.name + "'/>";
-	body += "<h3 style='text-align: center'>" + recipe["name"] + "<input type='submit' class='xIcon' value='x'></h3>";
+	body += "<h3 class='shopping_name' style='text-align: center'>" + recipe["name"] + "<input type='submit' class='xIcon' value='x'></h3>";
 	body += "<br />";
 	let ingredients = recipe["ingredients"];
 
