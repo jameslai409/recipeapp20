@@ -37,8 +37,8 @@
 
 					//create hidden form of recipe object in case user adds it to their favorites;
 					//the endpoint will recipe the full object to insert into database
-					button1 = "<input type='submit' value='ADD TO FAVORITES' id='addToFavorites'/>";
-					button2 = "<input type='button' value='NEXT RECIPE' id='refreshRecipesButton' onclick='getRecipes()'/>";
+					button1 = "<form class="form1"><input type='submit' value='ADD TO FAVORITES' id='addToFavorites'/>";
+					button2 = "<input type='button' value='NEXT RECIPE' id='refreshRecipesButton' onclick='getRecipes()'/></form>";
 					document.getElementById("web_recipe_form").innerHTML = "";
 					hiddenForm = createHiddenForm(recipeObject);
 					document.getElementById("web_recipe_form").innerHTML = hiddenForm + button1 + button2;
@@ -102,9 +102,9 @@
   		</a>
 	</div>
 
-	<form class="form1" method="POST" action="/webrecipe" id="web_recipe_form" onsubmit="return alertUser()">
+<!-- 	<form class="form1" method="POST" action="/webrecipe" id="web_recipe_form" onsubmit="return alertUser()">
 
-	</form>
+	</form> -->
 	<div id="data">Loading...</div>
 
 <% include partials/recipeObjectFooter %>

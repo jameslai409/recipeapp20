@@ -101,13 +101,13 @@ a.middle:hover:before {
 	display: flex;
 }
 
-.form1 {
+/*.form1 {
 	margin-top: 5%;
 	text-align: center;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-}
+}*/
 
 .form2 {
 	margin-top: 5%;
@@ -334,11 +334,26 @@ a.middle:hover:before {
 	}
 
 	.recipeImg {
-		width: 60%;
+		width: 80%;
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
+		padding-left: none;
+		height: auto;
 	}
 
+	.form1 {
+		display: block;
+	}
+
+	#addToFavorites {
+		width: 60%;
+		height: auto;
+	}
+
+	#refreshRecipesButton {
+		width: 60%;
+		height: auto;
+	}
 }
 	
