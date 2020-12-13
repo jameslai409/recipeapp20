@@ -302,7 +302,7 @@ a.middle:hover:before {
 	  color: black;
 	  padding: 14px 16px;
 	  text-decoration: none;
-	  font-size: 24px;
+	  font-size: 7vw;
 	  display: block;
 	  font-weight: 400;
 	  font-family: Righteous;
@@ -338,19 +338,31 @@ a.middle:hover:before {
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
-		padding-left: none;
+		padding-left: 0px;
 		height: auto;
+		margin-bottom: 5%;
 	}
 
 	#add {
 		min-width: 60%;
-		margin-right: none;
-		height: auto;
+		margin-right: 0px;
+		height: 12vw;
+		font-size: 5vw;
 	}
 
 	#recipe-list {
 		height: auto;
 		width: 60%;
+		height: 12vw;
+		font-size: 5vw;
+	}
+
+	.instructions {
+		font-size: 4vw;
+	}
+
+	.ingredients {
+		font-size: 3.5vw;
 	}
 }
 	
