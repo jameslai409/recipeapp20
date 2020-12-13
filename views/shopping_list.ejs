@@ -12,6 +12,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
+	<script src="https://smtpjs.com/v3/smtp.js"></script> <!-- for sending emails -->
 
 	<script language="javascript">
 		recipesObjects = new Array();
@@ -45,7 +46,6 @@
 					//display info on page
 					document.getElementById("data").innerHTML = body;
 
-
 				}
 				else if (request.readyState == 4 && request.status != 200) {
 					document.getElementById("data").innerHTML = "Something went wrong! Please refresh the page";
@@ -58,8 +58,27 @@
 
 			//add section to handle email form onclick
 			document.getElementById("emailSendButton").onclick = function() {
-				console.log("ill do this tomorrow :/");
+				let recipes = document.getElementById("data").innerHTML;
+				sendEmail(recipes);
 			}
+
+			function sendEmail(recipes) { 
+
+				var userEmail = document.getElementById("email").value;
+				Email.send({ 
+					Host: "smtp.gmail.com", 
+					Username: "comp20recipeapp@gmail.com", 
+					Password: "recipeapp", 
+					To: userEmail, 
+					From: "comp20recipeapp@gmail.com", 
+					Subject: "Sending Email using javascript", 
+					Body: recipes, 
+					Attachments: [] 
+				}) 
+				.then(function (message) { 
+					console.log("Mail has been sent successfully") 
+				}); 
+			} 
 		}
 		
 	</script>
