@@ -355,6 +355,7 @@ a.middle:hover:before {
 		width: 60%;
 		height: 12vw;
 		font-size: 4.5vw;
+		margin-top: 2%;
 	}
 
 	.instructions {
@@ -368,9 +369,6 @@ a.middle:hover:before {
 	.recipeDisplayContainer {
 		margin-left: 5%;
 		margin-right: 5%;
-		font-size: 5vw;
-		text-align: center;
-		display: block;
 	}
 
 	.recipeName {
@@ -394,15 +392,45 @@ a.middle:hover:before {
 		margin-right: 0px;
 	}
 
+	#addToFavorites2 {
+		width: 60%;
+		height: 12vw;
+		font-size: 4.5vw;
+	}
+
 	#refreshRecipesButton {
 		font-size: 4.5vw;
 		width: 60%;
 		height: 12vw;
+		margin-top: 2%;
 	}
 
 	.createYourOwnForm{
 		font-size: 4vw;
 	}
 
+	.h1_shopping {
+		font-size: 8vw;
+	}
+
+	.shopping_name {
+		font-size: 5vw;
+	}
+
+	.col-3 {
+		flex: 0 0 auto;
+		max-width: 50%;
+	}
+
+	.emailForm {
+		font-size: 4vw;
+
+	}
+
+	#emailSendButton {
+		width: 50%;
+		height: 12vw;
+		font-size: 4.5vw;
+	}
 }
 	
