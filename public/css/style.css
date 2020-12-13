@@ -339,7 +339,7 @@ a.middle:hover:before {
 		margin-left: auto;
 		margin-right: auto;
 		padding-left: none;
-		height: auto;
+		height: 40%;
 	}
 
 	.form1 {
