@@ -101,13 +101,13 @@ a.middle:hover:before {
 	display: flex;
 }
 
-/*.form1 {
+.form1 {
 	margin-top: 5%;
 	text-align: center;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-}*/
+}
 
 .form2 {
 	margin-top: 5%;
@@ -302,7 +302,7 @@ a.middle:hover:before {
 	  color: black;
 	  padding: 14px 16px;
 	  text-decoration: none;
-	  font-size: 7vw;
+	  font-size: 5vw;
 	  display: block;
 	  font-weight: 400;
 	  font-family: Righteous;
@@ -341,28 +341,46 @@ a.middle:hover:before {
 		padding-left: 0px;
 		height: auto;
 		margin-bottom: 5%;
+		padding-top: 3%;
 	}
 
 	#add {
-		min-width: 60%;
+		width: 60%;
 		margin-right: 0px;
 		height: 12vw;
-		font-size: 5vw;
+		font-size: 4.5vw;
 	}
 
 	#recipe-list {
-		height: auto;
 		width: 60%;
 		height: 12vw;
-		font-size: 5vw;
+		font-size: 4.5vw;
 	}
 
 	.instructions {
-		font-size: 4vw;
+		font-size: 3.5vw;
 	}
 
 	.ingredients {
 		font-size: 3.5vw;
 	}
+
+	.recipeDisplayContainer {
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+
+	.recipeName {
+		font-size: 5vw;
+		text-align: center;
+	}
+
+	#remove {
+		font-size: 4.5vw;
+		height: 10vw;
+		width: 50%;
+		margin-top: 3%;
+	}
+
 }
 	
