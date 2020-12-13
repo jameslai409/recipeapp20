@@ -334,7 +334,7 @@ a.middle:hover:before {
 	}
 
 	.recipeImg {
-		width: 80%;
+		width: 90%;
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
@@ -368,11 +368,16 @@ a.middle:hover:before {
 	.recipeDisplayContainer {
 		margin-left: 5%;
 		margin-right: 5%;
+		font-size: 5vw;
+		text-align: center;
+		display: block;
 	}
 
 	.recipeName {
 		font-size: 5vw;
 		text-align: center;
+		display: block;
+		padding-left: 0px;
 	}
 
 	#remove {
@@ -380,6 +385,23 @@ a.middle:hover:before {
 		height: 10vw;
 		width: 50%;
 		margin-top: 3%;
+	}
+
+	#addToFavorites {
+		width: 60%;
+		height: 12vw;
+		font-size: 4.5vw;
+		margin-right: 0px;
+	}
+
+	#refreshRecipesButton {
+		font-size: 4.5vw;
+		width: 60%;
+		height: 12vw;
+	}
+
+	.createYourOwnForm{
+		font-size: 4vw;
 	}
 
 }
