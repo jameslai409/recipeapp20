@@ -32,15 +32,17 @@
 						hiddenForm = createHiddenForm(recipeToDisplay);
 						document.getElementById("hiddenForm").innerHTML = hiddenForm;
 
-						// addToListButton = '<input type="submit" value="ADD TO SHOPPING LIST" id="add"/>';
-						// dropdown = "<select name='recipeList' id='recipe-list' size='1'></select>";
-						// document.getElementById("buttons").innerHTML = addToListButton + dropdown;
+						addToListButton = '<input type="submit" value="ADD TO SHOPPING LIST" id="add"/>';
+						dropdown = "<select name='recipeList' id='recipe-list' size='1'></select>";
+						document.getElementById("buttons").innerHTML = addToListButton + dropdown;
 
 						//display recipe on the page
 						recipeHtml = recipeToStringWithRemoveButton(recipeToDisplay);
 						document.getElementById("data").innerHTML = recipeHtml; 
 
 						document.getElementById("recipe-list").innerHTML = makeRecipeSelect();
+
+						document.getElementById("loadingMessage").innerHTML = "";
 
 						document.getElementById("recipe-list").onchange = function()
 						{
@@ -68,12 +70,12 @@
 					}
 					else if (request.readyState == 4 && request.status != 200) {
 
-						document.getElementById("data").innerHTML = "Something went wrong! Please refresh the page";
+						document.getElementById("loadingMessage").innerHTML = "Something went wrong! Please refresh the page";
 
 					}
 					else if (request.readyState == 3) {
 
-						document.getElementById("data").innerHTML = "No recipes in favorites. Browse or create your own!";
+						document.getElementById("loadingMessage").innerHTML = "No recipes in favorites. Browse or create your own!";
 
 					}
 
@@ -151,14 +153,15 @@
 
 	<form method="POST" action="/favorites" class="form2" id="favoritesForm" onsubmit="return alertUser()">
 		<div id="hiddenForm" style="display: none"></div>
-		<!-- <div id="buttons"> -->
-		<input type="submit" value="ADD TO SHOPPING LIST" id="add"/>
-		<select name='recipeList' id='recipe-list' size='1'></select>
-		<!-- </div> -->
+		<div id="buttons">
+		<!-- <input type="submit" value="ADD TO SHOPPING LIST" id="add"/>
+		<select name='recipeList' id='recipe-list' size='1'></select> -->
+		</div>
 	</form>
 
 	<form method="POST" action="/remove" id="removeForm" onsubmit="return removedRecipe()">
-		<div id="data" style="text-align: center">Loading...</div>
+		<div id="loadingMessage" style="text-align: center; margin-top: 10px">Loading...</div>
+		<div id="data">&nbsp;</div>
 	</form>
 
 <% include partials/recipeObjectFooter %>
