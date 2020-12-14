@@ -81,23 +81,11 @@ function recipeToStringWithRemoveButton(recipe)
 	nameString += "<input type='hidden' name='name' value='" + recipe.name + "'/>";
 	// removeButton = '<input type="submit" value="REMOVE RECIPE" id="remove"/>';
 	html2 = "<div class='flex-container'>";
-	imageString = "";
-	if (!recipe.userRecipe)
-	{
-		imageString = "<img class='recipeImg' src='" + recipe.image + "'/>";
-	} 
+	imageString = recipe.userRecipe === "true" ? "" : "<img class='recipeImg' src='" + recipe.image + "'/>";
 	html3 = "<div class='body-container'>";
 	instructionsString = "<div class='instructions'>" + recipe.instructions + "</div>";
 	ingredientsString = "<div class='ingredients'>" + arrayToUnorderedList(recipe.ingredients) + "</div>";
-	if (recipe.userRecipe)
-	{
-		html += nameString + html2 + html3 + instructionsString + ingredientsString;
-	}
-	else
-	{
-		html += nameString + html2 + imageString + html3 + instructionsString + ingredientsString;
-	}
-	
+	html += nameString + html2 + imageString + html3 + instructionsString + ingredientsString;
 	html += "</div></div>";
 	return html;
 }
@@ -163,7 +151,7 @@ function arrayToUnorderedList(array)
 function printIngredients(recipe) {
 	let body = "";
 	
-	body += "<form method='POST' action='/removeShoppingList' id='removeRecipeForm''>";
+	body += "<form method='POST' action='/removeShoppingList' id='removeRecipeForm'>";
 	body += "<input type='hidden' name='name' value='" + recipe.name + "'/>";
 	body += "<h3 class='shopping_name' style='text-align: center'>" + recipe["name"] + "<input type='submit' class='xIcon' value='x'></h3>";
 	body += "<br />";
