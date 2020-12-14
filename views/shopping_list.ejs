@@ -39,6 +39,11 @@
 					var body = "";
 					var emailBody = "";
 
+					if (recipes.length == 0)
+					{
+						body += "No items in shopping list. Add some from your favorites!";
+					}
+
 					//for every recipe, add the HTML to nicely print it into our variable Body
 					for (let r of recipes) {
 						body += printIngredients(r);
