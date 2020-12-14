@@ -25,7 +25,45 @@ app.listen(port, function() {
 });
 
 // set routes
+
+//when user enters landing page, clear database contents
 app.get('/', function(req, res) {
+    MongoClient.connect(url, function(err, db) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        var dbo = db.db("recipedb");
+        var recipes = dbo.collection("recipes");
+        var shoppingList = dbo.collection("shoppingList");
+        try
+        {
+            // console.log(reqObj.name);
+            recipes.deleteMany({}, function(err, items) {
+                if (err) {
+                    console.log("Error: " + err);
+                } 
+                console.log("Cleared recipe collection"); 
+            });
+
+            shoppingList.deleteMany({}, function(err, items) {
+                if (err) {
+                    console.log("Error: " + err);
+                } 
+                console.log("Cleared shoppingList collection"); 
+            });
+
+            db.close(); 
+        }
+        catch (e)
+        {
+            console.log("Error trying to clear database");
+            console.log(e);
+            db.close();
+        }
+
+    }); //end connect
+
     res.render('index');
 });
 
@@ -191,7 +229,7 @@ app.post('/remove', function(req, res) {
         }
         catch (e)
         {
-            console.log("Error trying to find items in database");
+            console.log("Error trying to delete items from database");
             console.log(e);
             db.close();
         }
