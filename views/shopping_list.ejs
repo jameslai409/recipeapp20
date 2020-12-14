@@ -41,7 +41,7 @@
 
 					if (recipes.length == 0)
 					{
-						body += "No items in shopping list. Add some from your favorites!";
+						document.getElementById("emptyMessage").innerHTML += "No items in shopping list. Add some from your favorites!";
 					}
 
 					//for every recipe, add the HTML to nicely print it into our variable Body
@@ -125,6 +125,10 @@
 
 	<h1 class="h1_shopping" style="text-align: center; margin-top: 2%; margin-bottom: 2%;">My Shopping List</h1>
 	<hr style="width: 400px" />
+
+	<div id="emptyMessage" style="text-align: center; margin-top: 10px">
+		&nbsp;
+	</div>
 
 	<!-- Place to load recipes in through ajax-->
 	<div id="data">
