@@ -69,7 +69,7 @@
 					}
 					else if (request.readyState == 3) {
 
-						document.getElementById("data").innerHTML = "Loading...";
+						document.getElementById("data").innerHTML = "No recipes in favorites. Browse or create your own!";
 
 					}
 
@@ -152,7 +152,7 @@
 	</form>
 
 	<form method="POST" action="/remove" id="removeForm" onsubmit="return removedRecipe()">
-		<div id="data" style="text-align: center">No recipes in favorites. Browse or create your own!</div>
+		<div id="data" style="text-align: center">Loading...</div>
 	</form>
 
 <% include partials/recipeObjectFooter %>
