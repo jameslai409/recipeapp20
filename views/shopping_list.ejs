@@ -87,6 +87,7 @@
 				}) 
 				.then(function (message) { 
 					console.log("Mail has been sent successfully");
+					document.getElementById('email').value = "";
 					alert("Email sent!");
 
 				}); 
