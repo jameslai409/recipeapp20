@@ -37,14 +37,23 @@
 					result = request.responseText;
 					recipes = JSON.parse(result);
 					var body = "";
+					var emailBody = "";
 
 					//for every recipe, add the HTML to nicely print it into our variable Body
 					for (let r of recipes) {
 						body += printIngredients(r);
+
+						//add recipe to email format
+						emailBody += "<h3>" + r.name + "</h3>";
+						for (let ing of r.ingredients) {
+							emailBody += ing + "<br />";
+						}
+						emailBody += "<br /></br />";
 					}
 
 					//display info on page
 					document.getElementById("data").innerHTML = body;
+					document.getElementById("emailData").innerHTML = emailBody;
 
 				}
 				else if (request.readyState == 4 && request.status != 200) {
@@ -58,7 +67,7 @@
 
 			//add section to handle email form onclick
 			document.getElementById("emailSendButton").onclick = function() {
-				let recipes = document.getElementById("data").innerHTML;
+				let recipes = document.getElementById("emailData").innerHTML;
 				console.log(recipes);
 				sendEmail(recipes);
 			}
@@ -113,6 +122,11 @@
 
 	<!-- Place to load recipes in through ajax-->
 	<div id="data">
+
+	</div>
+
+	<!-- hidden div to store email format -->
+	<div id="emailData" style="display: none;">
 
 	</div>
 
