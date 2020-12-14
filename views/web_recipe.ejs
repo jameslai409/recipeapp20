@@ -43,6 +43,9 @@
 					hiddenForm = createHiddenForm(recipeObject);
 					document.getElementById("web_recipe_form").innerHTML = hiddenForm + button1 + button2;
 
+					//get rid of loading message
+					document.getElementById("loadingMessage").innerHTML = "";
+
 					//display recipe on the page
 					recipeHtml = recipeToString(recipeObject);
 					document.getElementById("data").innerHTML = recipeHtml; 
@@ -50,12 +53,12 @@
 				}
 				else if (request.readyState == 4 && request.status != 200) {
 
-					document.getElementById("data").innerHTML = "Something went wrong! Please refresh the page";
+					document.getElementById("loadingMessage").innerHTML = "Something went wrong! Please refresh the page";
 
 				}
 				else if (request.readyState == 3) {
 
-					document.getElementById("data").innerHTML = "Loading...";
+					document.getElementById("loadingMessage").innerHTML = "Loading...";
 
 				}
 
@@ -105,7 +108,8 @@
 	<form class="form1" method="POST" action="/webrecipe" id="web_recipe_form" onsubmit="return alertUser()">
 
 	</form>
-	<div id="data">Loading...</div>
+	<div id="loadingMessage" style="text-align: center; margin-top: 10px">Loading...</div>
+	<div id="data">&nbsp;</div>
 
 <% include partials/recipeObjectFooter %>
 </body>
