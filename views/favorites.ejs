@@ -30,7 +30,9 @@
 						//create hidden form of recipe object in case user adds it to shopping list;
 						//the endpoint will recipe the full object to insert into database
 						hiddenForm = createHiddenForm(recipeToDisplay);
-						document.getElementById("hiddenForm").innerHTML = hiddenForm;
+						addToListButton = '<input type="submit" value="ADD TO SHOPPING LIST" id="add"/>';
+						dropdown = "<select name='recipeList' id='recipe-list' size='1'></select>";
+						document.getElementById("hiddenForm").innerHTML = hiddenForm + addToListButton + dropdown;
 
 						//display recipe on the page
 						recipeHtml = recipeToStringWithRemoveButton(recipeToDisplay);
@@ -147,8 +149,8 @@
 
 	<form method="POST" action="/favorites" class="form2" id="favoritesForm" onsubmit="return alertUser()">
 		<div id="hiddenForm" style="display: none"></div>
-		<input type="submit" value="ADD TO SHOPPING LIST" id="add"/>
-		<select name='recipeList' id='recipe-list' size='1'></select>
+		<!-- <input type="submit" value="ADD TO SHOPPING LIST" id="add"/>
+		<select name='recipeList' id='recipe-list' size='1'></select> -->
 	</form>
 
 	<form method="POST" action="/remove" id="removeForm" onsubmit="return removedRecipe()">
