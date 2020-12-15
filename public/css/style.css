@@ -419,7 +419,7 @@ a.middle:hover:before {
 
 	.col-3 {
 		flex: 0 0 auto;
-		max-width: 100%;
+		max-width: 40%;
 	}
 
 	.emailForm {
