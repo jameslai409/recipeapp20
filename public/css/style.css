@@ -432,5 +432,9 @@ a.middle:hover:before {
 		height: 12vw;
 		font-size: 4.5vw;
 	}
+
+	.loading {
+		font-size: 3.5vw;
+	}
 }
 	
