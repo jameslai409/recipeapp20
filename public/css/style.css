@@ -282,7 +282,7 @@ a.middle:hover:before {
 
 /* Style the navigation menu */
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
 	.no-mobile {display: none ;}
 
 	.mobile-nav {
