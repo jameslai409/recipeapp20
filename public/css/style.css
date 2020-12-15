@@ -383,6 +383,7 @@ a.middle:hover:before {
 		height: 10vw;
 		width: 50%;
 		margin-top: 3%;
+		float: none;
 	}
 
 	#addToFavorites {
