@@ -372,15 +372,14 @@ a.middle:hover:before {
 	}
 
 	.recipeName {
-		font-size: 5vw;
+		font-size: 5.7vw;
 		text-align: center;
 		display: block;
-		padding-left: 0px;
 	}
 
 	#remove {
-		font-size: 4.5vw;
-		height: 10vw;
+		font-size: 3.9vw;
+		height: 9.5vw;
 		width: 50%;
 		margin-top: 3%;
 		float: none;
